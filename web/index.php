@@ -5,10 +5,8 @@ if($_SERVER['HTTP_REFERER'] == "https://portal.confiber.com.ar/") {
   $_SESSION['login_user'] = "MediaCMS";
   echo $_SERVER['HTTP_REFERER'];
   header("location: index.php");
-} else {
-  echo "viene de ".$_SERVER['HTTP_REFERER'];
-
 }
+
 #Iniciar sesion
 include('session.php');
 
