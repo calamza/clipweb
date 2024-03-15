@@ -5,7 +5,11 @@
       $_SESSION['login_user'] = "MediaCMS";
       echo $_SERVER['HTTP_REFERER'];
       header("location: index.php");
+    }else {
+      echo "no entro";
+    
     }
+    
    $user_check = $_SESSION['login_user'];
    
    $ses_sql = mysqli_query($db,"select username from admin where username = '$user_check' ");
