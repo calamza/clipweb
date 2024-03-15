@@ -41,10 +41,10 @@ if (file_exists($filename)) {
 
 ## Guardado de video cortado
 $randomID=uniqid();
-shell_exec("ffmpeg -i downloads/".$videoid.".mp4  -ss ".$inicio." -to ".$fin." -c:v copy -c:a copy cortos/cortado-".$videoid."-".$randomID.".mp4");
+shell_exec("ffmpeg -i downloads/".$videoid.".mp4  -ss ".$inicio." -to ".$fin." -c:v copy -c:a copy clips/clip-".$videoid."-".$randomID.".mp4");
 
 ?>
-    <tr><td><a href='download.php?url=<?php echo "cortos/cortado-".$videoid."-".$randomID.".mp4"; ?> '> Descargar clip </a></tr></td></br></br></br>
+    <tr><td><a href='download.php?url=<?php echo "clips/clip-".$videoid."-".$randomID.".mp4"; ?> '> Descargar clip </a></tr></td></br></br></br>
 </table>
 </br></br></br>
     <h3><a href = "index.php">Volver</a></h3></br>
