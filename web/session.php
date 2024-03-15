@@ -3,10 +3,11 @@
    session_start();
    if($_SERVER['HTTP_REFERER'] == "https://portal.confiber.com.ar/ ") {
       $_SESSION['login_user'] = "MediaCMS";
-      echo $_SERVER['HTTP_REFERER'];
+      echo "entro desde session".$_SERVER['HTTP_REFERER'];
+      echo "el usuario es ".$_SESSION['login_user']";
       header("location: index.php");
     } else {
-      echo $_SERVER['HTTP_REFERER'];
+      echo "desde el session".$_SERVER['HTTP_REFERER'];
 
     }
 
