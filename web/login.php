@@ -8,6 +8,8 @@
       header("location: index.php");
    }
    
+   echo $_SERVER['HTTP_REFERER'];
+   
    if($_SERVER["REQUEST_METHOD"] == "POST") {
       // username and password sent from form 
       

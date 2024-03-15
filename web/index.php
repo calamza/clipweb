@@ -6,7 +6,7 @@ if($_SERVER['HTTP_REFERER'] == "https://portal.confiber.com.ar/ ") {
   echo $_SERVER['HTTP_REFERER'];
   header("location: index.php");
 } else {
-  echo $_SERVER['HTTP_REFERER'];
+  echo "viene de ".$_SERVER['HTTP_REFERER'];
 
 }
 #Iniciar sesion
