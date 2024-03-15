@@ -8,6 +8,6 @@ CREATE TABLE `admin` (
 
 LOCK TABLES `admin` WRITE;
 /*!40000 ALTER TABLE `admin` DISABLE KEYS */;
-INSERT INTO `admin` VALUES (1,'jtassi','Aa12162389'),(2,'mjtassi','Hola304181!');
+INSERT INTO `admin` VALUES (1,'jtassi','Aa12162389'),(2,'cmartin','Medios2024!'),(3,'nalewarts','Medios2024!');
 /*!40000 ALTER TABLE `admin` ENABLE KEYS */;
 UNLOCK TABLES;
