@@ -12,22 +12,6 @@ $fin = $_POST['fin'];
 <html>
 <head>
 <title>ClipWEB - Cortar videos para compartir</title>
-<script>
-function copytoclipboard() {
-    // Get the text field
-    var copyText = document.getElementById("myInput");
-  
-    // Select the text field
-    copyText.select();
-    copyText.setSelectionRange(0, 99999); // For mobile devices
-  
-     // Copy the text inside the text field
-    navigator.clipboard.writeText(copyText.value);
-  
-    // Alert the copied text
-    alert("Texto copiado: " + copyText.value);
-  } 
-</script>
 
 </head>
 <body>
@@ -55,7 +39,6 @@ if (file_exists($filename)) {
     //echo "The file $filename does not exist";
     echo "<tr><td colspan='2'>El archivo original de video ahora esta en cache, generacion rapida de clips de este video disponible por 2 horas</td></tr>";
     shell_exec("wget --no-use-server-timestamps -O downloads/".$videoid.".mp4 https://mediacms.unomedios.com.ar".$url_original);
-    #shell_exec("echo 'rm -f downloads/'.$videoid.'.mp4' | at now+1min");
 }
 
 ## Guardado de video cortado
@@ -63,12 +46,7 @@ $randomID=uniqid();
 shell_exec("ffmpeg -i downloads/".$videoid.".mp4  -ss ".$inicio." -to ".$fin." -c:v copy -c:a copy clips/clip-".$videoid."-".$randomID.".mp4");
 
 ?>
-    <tr><td>  <!-- The text field -->
-<input type="text" value="https://clipcms.unomedios.com.ar/<?php echo "clips/clip-".$videoid."-".$randomID.".mp4"; ?>" id="myInput">
-
-<!-- The button used to copy the text -->
-<button onclick="copytoclipboard()">Copiar link</button> </td>
-    
+    <tr><td>  <?php echo "clips/clip-".$videoid."-".$randomID.".mp4"; ?></td> 
     <td><a href='download.php?url=<?php echo "clips/clip-".$videoid."-".$randomID.".mp4"; ?> '> Descargar clip </a></tr></td></br></br></br>
 </table>
 </br></br></br>
