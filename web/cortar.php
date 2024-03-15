@@ -16,7 +16,7 @@ $fin = $_POST['fin'];
 </head>
 <body>
 
-<table style="width:25%" border="1" align="left">
+<table style="width:40%" border="1" align="left">
      
 <?php
 
@@ -49,7 +49,7 @@ shell_exec("ffmpeg -i downloads/".$videoid.".mp4  -ss ".$inicio." -to ".$fin." -
     <tr><td>  <?php echo "https://clipcms.unomedios.com.ar/clips/clip-".$videoid."-".$randomID.".mp4"; ?></td> 
     <td><a href='download.php?url=<?php echo "clips/clip-".$videoid."-".$randomID.".mp4"; ?> '> Descargar clip </a></tr></td></br></br></br>
 </table>
-</br></br></br>
+</br></br></br></br></br></br>
     <h3><a href = "index.php">Volver</a></h3></br>
     <h3><a href = "logout.php">Sign Out</a></h3>
 </body>
