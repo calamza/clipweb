@@ -4,7 +4,7 @@
 include('session.php');
 if($_SERVER['HTTP_REFERER'] == "https://mediacms.unomedios.com.ar/ ") {
   $_SESSION['login_user'] = "MediaCMS";
-     
+  echo $_SERVER['HTTP_REFERER'];
   header("location: index.php");
 }
 if (isset($_SESSION['videoID'])) {
