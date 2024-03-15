@@ -4,7 +4,7 @@ ob_start();
 $videoid = $_POST['videoid'];
 $inicio = $_POST['inicio'];
 $fin = $_POST['fin'];
-
+$permanente = $_POST['permanente'];
 
 
 ?>
@@ -41,13 +41,23 @@ if (file_exists($filename)) {
     shell_exec("wget --no-use-server-timestamps -O downloads/".$videoid.".mp4 https://mediacms.unomedios.com.ar".$url_original);
 }
 
-## Guardado de video cortado
+## Guardado clip
 $randomID=uniqid();
-shell_exec("ffmpeg -i downloads/".$videoid.".mp4  -ss ".$inicio." -to ".$fin." -c:v copy -c:a copy clips/clip-".$videoid."-".$randomID.".mp4");
-
+if ($permanente==0) {
+    shell_exec("ffmpeg -i downloads/".$videoid.".mp4  -ss ".$inicio." -to ".$fin." -c:v copy -c:a copy clips/clip-".$videoid."-".$randomID.".mp4");
 ?>
     <tr><td>  <?php echo "https://clipcms.unomedios.com.ar/clips/clip-".$videoid."-".$randomID.".mp4"; ?></td> 
     <td><a href='download.php?url=<?php echo "clips/clip-".$videoid."-".$randomID.".mp4"; ?> '> Descargar clip </a></tr></td></br></br></br>
+<?php
+} else {
+    shell_exec("ffmpeg -i downloads/".$videoid.".mp4  -ss ".$inicio." -to ".$fin." -c:v copy -c:a copy clips-permanentes/clip-".$videoid."-".$randomID.".mp4");
+?>
+    <tr><td>  <?php echo "https://clipcms.unomedios.com.ar/clips-permanentes/clip-".$videoid."-".$randomID.".mp4"; ?></td> 
+    <td><a href='download.php?url=<?php echo "clips-permanentes/clip-".$videoid."-".$randomID.".mp4"; ?> '> Descargar clip </a></tr></td></br></br></br>
+<?php
+}
+?>
+    
 </table>
 </br></br></br></br></br></br>
     <h3><a href = "index.php">Volver</a></h3></br>
