@@ -6,6 +6,9 @@ if($_SERVER['HTTP_REFERER'] == "https://mediacms.unomedios.com.ar/ ") {
   $_SESSION['login_user'] = "MediaCMS";
   echo $_SERVER['HTTP_REFERER'];
   header("location: index.php");
+} else {
+  echo "no entro";
+
 }
 if (isset($_SESSION['videoID'])) {
   #echo "Variable 'paso1' is set.";
