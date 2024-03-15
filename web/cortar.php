@@ -9,7 +9,12 @@ $fin = $_POST['fin'];
 <html>
 <head>
 <title>ClipWEB - Cortar videos para compartir</title>
-
+<script type="text/javascript">
+function genericSocialShare(url){
+    window.open(url,'sharer','toolbar=0,status=0,width=648,height=395');
+    return true;
+}
+</script>
 </head>
 <body>
 
@@ -44,7 +49,7 @@ $randomID=uniqid();
 shell_exec("ffmpeg -i downloads/".$videoid.".mp4  -ss ".$inicio." -to ".$fin." -c:v copy -c:a copy clips/clip-".$videoid."-".$randomID.".mp4");
 
 ?>
-    <tr><td><a href='download.php?url=<?php echo "clips/clip-".$videoid."-".$randomID.".mp4"; ?> '> Descargar clip </a></tr></td></br></br></br>
+    <tr><td> <a href="javascript:void(0)" onclick="javascript:genericSocialShare('[CustomSocialShareLink]')"> Copiar link </a></td><td><a href='download.php?url=<?php echo "clips/clip-".$videoid."-".$randomID.".mp4"; ?> '> Descargar clip </a></tr></td></br></br></br>
 </table>
 </br></br></br>
     <h3><a href = "index.php">Volver</a></h3></br>

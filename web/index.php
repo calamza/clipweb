@@ -34,7 +34,7 @@ if ($_SESSION['videoID']==NULL) {
     <tr><td>Inicio<input type="text" name="inicio" placeholder="00:00:00" pattern="[0-2]{2}:[0-59]{2}:[0-59]{2}"> en formato hora 01:02:03, hora, minuto y segundo en el que debe empezar respecto al original</td></tr>
     <tr><td>Fin<input type="text" name="fin" placeholder="00:00:00" pattern="[0-2]{2}:[0-59]{2}:[0-59]{2}"> en formato hora 01:02:03, hora, minuto y segundo en el que debe finalizar respecto al original</td></tr>
   </table>
-  <bold><p style="color:#FF0000">IMPORTANTE: Cuando le de al boton cortar se va a procesar el corte por lo que va a demorar. NO PRESIONE VARIAS VECES EL BOTON CORTAR!!<p></bold>
+  <bold><p style="color:#FF0000">IMPORTANTE: Cuando le de al boton cortar se va a procesar el clip por lo que va a demorar. NO PRESIONE VARIAS VECES EL BOTON CORTAR!!<p></bold>
   <input type="submit" value="Cortar">
   </fieldset>
 </form>
