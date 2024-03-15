@@ -1,7 +1,11 @@
 <?php
    include('config.php');
    session_start();
-   
+   if($_SERVER['HTTP_REFERER'] == "https://mediacms.unomedios.com.ar/ ") {
+      $_SESSION['login_user'] = "MediaCMS";
+      echo $_SERVER['HTTP_REFERER'];
+      header("location: index.php");
+    }
    $user_check = $_SESSION['login_user'];
    
    $ses_sql = mysqli_query($db,"select username from admin where username = '$user_check' ");
