@@ -7,8 +7,6 @@
          
       header("location: index.php");
    }
-   echo "el nombre de la sesion es ".$_SESSION['login_user'];
-   echo "        viene por login ".$_SERVER['HTTP_REFERER'];
    
    if($_SERVER["REQUEST_METHOD"] == "POST") {
       // username and password sent from form 
