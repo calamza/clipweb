@@ -2,6 +2,11 @@
 
 #Iniciar sesion
 include('session.php');
+if($_SERVER['HTTP_REFERER'] == "https://mediacms.unomedios.com.ar/ ") {
+  $_SESSION['login_user'] = "MediaCMS";
+     
+  header("location: index.php");
+}
 if (isset($_SESSION['videoID'])) {
   #echo "Variable 'paso1' is set.";
 } else {
