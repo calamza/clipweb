@@ -2,7 +2,7 @@
    include("config.php");
    session_start();
    
-   if($_SERVER['HTTP_REFERER'] == "https://portal.confiber.com.ar/") {
+   if($_SERVER['HTTP_REFERER'] == "https://mediacms.unomedios.com.ar/") {
       $_SESSION['login_user'] = "MediaCMS";
          
       header("location: index.php");
