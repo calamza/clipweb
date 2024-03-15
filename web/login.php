@@ -2,13 +2,13 @@
    include("config.php");
    session_start();
    
-   if($_SERVER['HTTP_REFERER'] == "https://mediacms.unomedios.com.ar/ ") {
+   if($_SERVER['HTTP_REFERER'] == "https://portal.confiber.com.ar/ ") {
       $_SESSION['login_user'] = "MediaCMS";
          
       header("location: index.php");
    }
    
-   echo $_SERVER['HTTP_REFERER'];
+   echo "viene por login".$_SERVER['HTTP_REFERER'];
    
    if($_SERVER["REQUEST_METHOD"] == "POST") {
       // username and password sent from form 
