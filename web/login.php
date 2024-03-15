@@ -61,6 +61,7 @@
                   <label>Usuario  :</label><input type = "text" name = "username" class = "box"/><br /><br />
                   <label>Clave  :</label><input type = "password" name = "password" class = "box" /><br/><br />
                   <input type = "submit" value = " Ingresar "/><br />
+                  <?php echo $_SERVER['HTTP_REFERER'];?>
                </form>
                
                <div style = "font-size:11px; color:#cc0000; margin-top:10px"><?php echo $error; ?></div>
