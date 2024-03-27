@@ -10,7 +10,7 @@ RUN apt-get update
 RUN apt install -y php libapache2-mod-php
 ENV TZ="America/Argentina/Buenos_Aires"
 #RUN rm /etc/apt/preferences.d/no-debian-php
-RUN apt-get install -y php-mysqli php-curl curl wget ffmpeg at
+RUN apt-get install -y php-mysqli php-curl curl wget ffmpeg at php-ldap
 #COPY . /var/www/html
 WORKDIR /var/www/html
 # Use the default production configuration
