@@ -15,7 +15,7 @@
 	 Bind to an Active Directory LDAP server and look
 	 something up.
 	 ***************************************************/
-	$SearchFor="Medios";		//What string do you want to find?
+	$SearchFor="Name";		//What string do you want to find?
 	$SearchField="samaccountname";			//In what Active Directory field do you want to search for the string?
 	$LDAPHost = "unomedios.com.ar";		//Your LDAP server DNS Name or IP Address
 	$dn = "DC=unomedios,DC=com,DC=ar";		//Put your Base DN here
