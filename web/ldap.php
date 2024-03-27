@@ -3,10 +3,10 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 
 
-$ldapconfig['host'] = 'unomedios.com.ar';//CHANGE THIS TO THE CORRECT LDAP SERVER
-$ldapconfig['port'] = '389';
-$ldapconfig['basedn'] = 'dc=unomedios,dc=com,dc=ar';//CHANGE THIS TO THE CORRECT BASE DN
-$ldapconfig['usersdn'] = 'cn=Medios';//CHANGE THIS TO THE CORRECT USER OU/CN
+$ldapconfig['host'] = "unomedios.com.ar";//CHANGE THIS TO THE CORRECT LDAP SERVER
+$ldapconfig['port'] = "389";
+$ldapconfig['basedn'] = "dc=unomedios,dc=com,dc=ar";//CHANGE THIS TO THE CORRECT BASE DN
+$ldapconfig['usersdn'] = "cn=Medios";//CHANGE THIS TO THE CORRECT USER OU/CN
 $ds=ldap_connect($ldapconfig['host'], $ldapconfig['port']);
 
 ldap_set_option($ds, LDAP_OPT_PROTOCOL_VERSION, 3);
