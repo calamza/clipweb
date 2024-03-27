@@ -6,7 +6,7 @@ $password = $_POST['password'];
 $ldapconfig['host'] = "unomedios.com.ar";//CHANGE THIS TO THE CORRECT LDAP SERVER
 $ldapconfig['port'] = "389";
 $ldapconfig['basedn'] = "DC=unomedios,DC=com,DC=ar";//CHANGE THIS TO THE CORRECT BASE DN
-$ldapconfig['usersdn'] = "OU=UNO MEDIOS S.A.,OU=UnoMedios S.A.,OU=Medios";//CHANGE THIS TO THE CORRECT USER OU/CN
+$ldapconfig['usersdn'] = "OU=Medios";//CHANGE THIS TO THE CORRECT USER OU/CN
 $ds=ldap_connect($ldapconfig['host'], $ldapconfig['port']);
 
 ldap_set_option($ds, LDAP_OPT_PROTOCOL_VERSION, 3);
