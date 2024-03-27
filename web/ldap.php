@@ -4,7 +4,7 @@
 	ini_set('display_errors', '1');
 	
 	//Set User domain extention
-	$LDAPUserDomain = "@my.domain";  //Needs the @, but not always the same as the LDAP server domain
+	$LDAPUserDomain = "@unomedios.com.ar";  //Needs the @, but not always the same as the LDAP server domain
 	?><form name="input" action="ldap.php" method="post">
 		Username: <input type="text" name="u"> <?php echo $LDAPUserDomain;?><br />
 		Password: <input type="password" name="p">
@@ -15,10 +15,10 @@
 	 Bind to an Active Directory LDAP server and look
 	 something up.
 	 ***************************************************/
-	$SearchFor="ENTER SEARCH STRING";		//What string do you want to find?
+	$SearchFor="Medios";		//What string do you want to find?
 	$SearchField="samaccountname";			//In what Active Directory field do you want to search for the string?
-	$LDAPHost = "ENTER YOUT LDAP SERVER";		//Your LDAP server DNS Name or IP Address
-	$dn = "DC=MY,DC=DOMAIN";		//Put your Base DN here
+	$LDAPHost = "unomedios.com.ar";		//Your LDAP server DNS Name or IP Address
+	$dn = "DC=unomedios,DC=com,DC=ar";		//Put your Base DN here
 	$LDAPUser = $_POST['u'];		//A valid Active Directory login
 	$LDAPUserPassword = $_POST['p'];
 	$LDAPFieldsToFind = array("*");		//Search Felids, Wildcard Supported for returning all values
