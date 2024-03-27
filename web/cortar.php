@@ -1,11 +1,12 @@
 <?php
 include('session.php');
+include('config.php');
 ob_start();
 $videoid = $_POST['videoid'];
 $inicio = $_POST['inicio'];
 $fin = $_POST['fin'];
 $permanente = $_POST['permanente'];
-
+$descripcion = $_POST['descripcion'];
 
 ?>
 <!DOCTYPE html>
@@ -49,6 +50,12 @@ if ($permanente==0) {
     <tr><td>  <?php echo "https://clipcms.unomedios.com.ar/clips/clip-".$videoid."-".$randomID.".mp4"; ?></td> 
     <td><a href='download.php?url=<?php echo "clips/clip-".$videoid."-".$randomID.".mp4"; ?> '> Descargar clip </a></tr></td></br></br></br>
 <?php
+    $sql = "INSERT INTO descripcion (id, usuario, descripcion, link) VALUES ('', $login_session, $descripcion, 'download.php?url=clips/clip-.$videoid.$randomID.mp4')";
+    if (mysqli_query($db, $sql)) {
+        echo "Registro creado";
+      } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($db);
+      }
 } else {
     shell_exec("ffmpeg -i downloads/".$videoid.".mp4  -ss ".$inicio." -to ".$fin." -c:v copy -c:a copy clips-permanentes/clip-".$videoid."-".$randomID.".mp4");
 ?>
