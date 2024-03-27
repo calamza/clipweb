@@ -13,13 +13,13 @@ ldap_set_option($ds, LDAP_OPT_PROTOCOL_VERSION, 3);
 ldap_set_option($ds, LDAP_OPT_REFERRALS, 0);
 ldap_set_option($ds, LDAP_OPT_NETWORK_TIMEOUT, 10);
 
-$dn="sAMAccountName=".$username.",".$ldapconfig['usersdn'].",".$ldapconfig['basedn'];
+$dn="uid=".$username.",".$ldapconfig['usersdn'].",".$ldapconfig['basedn'];
 if(isset($_POST['username'])){
-if ($bind=ldap_bind($ds)) {
+if ($bind=ldap_bind($ds, $dn, $password)) {
   echo("Login correct");//REPLACE THIS WITH THE CORRECT FUNCTION LIKE A REDIRECT;
 } else {
- echo $password.$username.$dn;
- echo "Login Failed: Please check your username or password";
+ echo $dn;
+ echo "<br>Login Failed: Please check your username or password";
 }
 }
 ?>
