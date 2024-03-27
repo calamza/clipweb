@@ -18,7 +18,7 @@ if(isset($_POST['username'])){
 if ($bind=ldap_bind($ds, $dn, $password)) {
   echo("Login correct");//REPLACE THIS WITH THE CORRECT FUNCTION LIKE A REDIRECT;
 } else {
-
+ echo $password.$username.$dn;
  echo "Login Failed: Please check your username or password";
 }
 }
