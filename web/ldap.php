@@ -2,24 +2,25 @@
 $username = $_POST['username'];
 $password = $_POST['password'];
 
-
+$ldapuser = "S_clipcms";
+$ldappass = "V2awy3oLBT";
 $ldapconfig['host'] = "unomedios.com.ar";//CHANGE THIS TO THE CORRECT LDAP SERVER
 $ldapconfig['port'] = "389";
 $ldapconfig['basedn'] = "DC=unomedios,DC=com,DC=ar";//CHANGE THIS TO THE CORRECT BASE DN
-$ldapconfig['usersdn'] = "OU=Medios";//CHANGE THIS TO THE CORRECT USER OU/CN
+$ldapconfig['usersdn'] = "OU=Servicios,OU=Medios";//CHANGE THIS TO THE CORRECT USER OU/CN
 $ds=ldap_connect($ldapconfig['host'], $ldapconfig['port']);
 
 ldap_set_option($ds, LDAP_OPT_PROTOCOL_VERSION, 3);
 ldap_set_option($ds, LDAP_OPT_REFERRALS, 0);
 ldap_set_option($ds, LDAP_OPT_NETWORK_TIMEOUT, 10);
 
-$dn="CN=".$username.",".$ldapconfig['usersdn'].",".$ldapconfig['basedn'];
+$dn="CN=".$ldapuser.",".$ldapconfig['usersdn'].",".$ldapconfig['basedn'];
 if(isset($_POST['username'])){
-if ($bind=ldap_bind($ds, $dn, $password)) {
-  echo("Login correct");//REPLACE THIS WITH THE CORRECT FUNCTION LIKE A REDIRECT;
+if ($bind=ldap_bind($ds, $dn, $ldappass)) {
+  echo("metiste un user");//REPLACE THIS WITH THE CORRECT FUNCTION LIKE A REDIRECT;
 } else {
  echo $dn;
- echo "<br>Login Failed: Please check your username or password";
+ echo "<br>Login Failed: No escribiste usuario o contraseña";
 }
 }
 ?>
