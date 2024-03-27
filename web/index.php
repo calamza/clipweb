@@ -49,6 +49,7 @@ if ($_SESSION['videoID']==NULL) {
   </fieldset>
 </form>
 </br></br>
+<h3><a href="docu.html">Documentacion de uso</a></h3>
 <h3><a href = "logout.php">Sign Out</a></h3>
 <?php
 }
