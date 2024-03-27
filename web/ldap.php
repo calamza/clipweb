@@ -19,6 +19,7 @@ if(isset($_POST['username'])){
 if ($bind=ldap_bind($ds, $dn, $ldappass)) {
   echo("Conectado");//REPLACE THIS WITH THE CORRECT FUNCTION LIKE A REDIRECT;
   $search = ldap_search($ds, "sAMAccountName=".$username.",DC=unomedios,DC=com,DC=ar", "(cn=*)");
+  echo $search;
 } else {
  echo "Error de conexion al Active Directory";
 }
