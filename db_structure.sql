@@ -11,3 +11,12 @@ LOCK TABLES `admin` WRITE;
 INSERT INTO `admin` VALUES (1,'jtassi','Aa12162389'),(2,'cmartin','Medios2024!'),(3,'nalewarts','Medios2024!');
 /*!40000 ALTER TABLE `admin` ENABLE KEYS */;
 UNLOCK TABLES;
+
+
+CREATE TABLE links (
+    `id` int NOT NULL AUTO_INCREMENT,
+    `usuario` varchar(255),
+    `descripcion` varchar(255),
+    `link` varchar(255),
+    PRIMARY KEY (`id`)
+);
