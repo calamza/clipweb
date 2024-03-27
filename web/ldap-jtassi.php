@@ -17,10 +17,10 @@ ldap_set_option($ds, LDAP_OPT_NETWORK_TIMEOUT, 10);
 $dn="CN=".$ldapuser.",".$ldapconfig['usersdn'].",".$ldapconfig['basedn'];
 if(isset($_POST['username'])){
 if ($bind=ldap_bind($ds, $dn, $ldappass)) {
-  echo("Conectado");//REPLACE THIS WITH THE CORRECT FUNCTION LIKE A REDIRECT;
-  $search = ldap_search($ds, "sAMAccountName=".$username.",DC=unomedios,DC=com,DC=ar", "(cn=*)");
+  echo("metiste un user");//REPLACE THIS WITH THE CORRECT FUNCTION LIKE A REDIRECT;
 } else {
- echo "Error de conexion al Active Directory";
+ echo $dn;
+ echo "<br>Login Failed: No escribiste usuario o contraseña";
 }
 }
 ?>
