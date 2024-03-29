@@ -35,7 +35,7 @@ if(isset($_POST['username']) && isset($_POST['password'])){
             $userDn = $info[$i]["distinguishedname"][0]; 
         }
         */
-        @ldap_close($ldap);
+        //@ldap_close($ldap);
     } else {
         $msg = "Usuario y/o clave incorrecto";
         echo $msg;
