@@ -17,7 +17,8 @@ $descripcion = $_POST['descripcion'];
 
 </head>
 <body>
-<h2><a href = "index.php">Ir al home</a></h2>
+<h2>Descarga o copia el link del video cortado</h2>
+<h3><a href = "index.php">Ir al home</a></h3>
 <table>
      
 <?php
