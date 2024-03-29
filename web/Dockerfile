@@ -4,7 +4,8 @@
 #EXPOSE 80
 #CMD [ "php", "./your-script.php" ]
 
-FROM ubuntu/apache2:latest
+#FROM ubuntu/apache2:latest
+FROM php:8.2-apache
 
 RUN apt-get update
 RUN apt install -y php libapache2-mod-php
