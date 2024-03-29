@@ -57,7 +57,7 @@ if ($permanente==0) {
 <?php
     //echo $descripcion;
     
-    $sql = "INSERT INTO descripcion (id, usuario, descripcion, link) VALUES ('', '".$login_session."', '".$descripcion."','download.php?url=clips/clip-".$videoid."-".$randomID.".mp4)'";
+    $sql = "INSERT INTO descripcion (id, usuario, descripcion, link) VALUES ('', '".$login_session."', '".$descripcion."','download.php?url=clips/clip-".$videoid."-".$randomID.".mp4')";
     mostrarTexto($sql);
 } else {
     shell_exec("ffmpeg -i downloads/".$videoid.".mp4  -ss ".$inicio." -to ".$fin." -c:v copy -c:a copy clips-permanentes/clip-".$videoid."-".$randomID.".mp4");
