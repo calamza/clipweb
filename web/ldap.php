@@ -28,9 +28,11 @@ if(isset($_POST['username']) && isset($_POST['password'])){
         {
             if($info['count'] > 1)
                 break;
-            echo "<p>You are accessing <strong> ". $info[$i]["sn"][0] .", " . $info[$i]["givenname"][0] ."</strong><br /> (" . $info[$i]["samaccountname"][0] .")</p>\n";
+            //echo "<p>You are accessing <strong> ". $info[$i]["sn"][0] .", " . $info[$i]["givenname"][0] ."</strong><br /> (" . $info[$i]["samaccountname"][0] .")</p>\n";
             echo '<pre>';
-            var_dump($info);
+            if ($info[$i]["memberof"][0] == "G_SI")
+                echo "si es miembro";
+            //var_dump($info);
             echo '</pre>';
             $userDn = $info[$i]["distinguishedname"][0]; 
         }
