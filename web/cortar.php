@@ -2,6 +2,7 @@
 include('ldap.php');
 include('config.php');
 include('session.php');
+include('functions.php');
 ob_start();
 
 $videoid = $_POST['videoid'];
@@ -31,7 +32,6 @@ shell_exec("curl -k 'https://mediacms.unomedios.com.ar/api/v1/media/".$videoid."
 $tmp_json = file_get_contents('tmp.json');
 $decoded_json = json_decode($tmp_json, true);
 
-
 $encodings_info = $decoded_json['encodings_info'];
 $temp_original=$encodings_info['0-original'];
 $temp_original2=$temp_original['h264'];
@@ -58,24 +58,7 @@ if ($permanente==0) {
     //echo $descripcion;
     
     $sql = "INSERT INTO descripcion (id, usuario, descripcion, link) VALUES (, ".$login_session.", ".$descripcion.",download.php?url=clips/clip-".$videoid."-".$randomID.".mp4)";
-    //echo $sql;
-    //echo "la conexion".$db;
-    /*
-    if(mysqli_query($db, $sql)){
-       echo "Record inserted successfully";  
-    }else{  
-       echo "Could not insert record: ". mysqli_error($db);  
-    }
-       mysqli_close($db);
-    */
-    /*
-    if (mysqli_query($db, $sql)) {
-        echo "Registro creado";
-    } else {
-        //echo "Error: " . $sql . "<br>" . mysqli_error($db);
-        echo "No le pinta";
-    }
-    */
+    mostrarTexto($sql);
 } else {
     shell_exec("ffmpeg -i downloads/".$videoid.".mp4  -ss ".$inicio." -to ".$fin." -c:v copy -c:a copy clips-permanentes/clip-".$videoid."-".$randomID.".mp4");
 ?>
