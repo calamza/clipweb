@@ -15,7 +15,7 @@ include('config.php');
 <h2>Historico de links creados por <?php echo $login_session; ?></h2>
 <p>
 </br></br>
-<table style="width:50%">
+<table style="width:100%">
     <tr><td>Usuario</td><td>Descripcion</td><td>Link</td><td>Link Video Original</td><td>Tiempo de inicio del video original</td><td>Tiempo fin del video original</td></tr>
     <?php
     $result = mysqli_query($db_link, "SELECT usuario,descripcion,link,videoid,inicio,fin FROM links");
