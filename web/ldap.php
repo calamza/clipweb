@@ -23,13 +23,13 @@ if(isset($_POST['username']) && isset($_POST['password'])){
         //ldap_sort($ldap,$result,"sn");
         $info = ldap_get_entries($ldap, $result);
         echo "Existe el usuario";
-        
+        echo count($info);
         for ($i=0; $i<$info["count"]; $i++)
         {
             if($info['count'] > 1)
                 break;
             //echo "<p>You are accessing <strong> ". $info[$i]["memberof"][1] .", " . $info[$i]["givenname"][0] ."</strong><br /> (" . $info[$i]["samaccountname"][0] .")</p>\n";
-           echo count($info);
+           
             for ($j=0; $j<$info["count"]; $j++)
             {
                 echo "<p>dentro del segundo for</p>\n";
