@@ -67,9 +67,8 @@ if ($permanente==0) {
 ?>
     
 </table>
-</br></br></br></br></br></br>
-    <h2><a href = "index.php">Volver</a></h2></br>
-    <h2><a href = "logout.php">Sign Out</a></h2>
+
+<h2><a href = "logout.php">Cerrar sesion</a></h2>
 </body>
 
 </html>
