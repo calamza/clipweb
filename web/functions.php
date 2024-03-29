@@ -1,7 +1,7 @@
 <?php
 include('config.php');
 function save_history($texto) {
-    $texto = "INSERT INTO links (descripcion) VALUES ('pruebaaa');";
+    $texto = "INSERT INTO links (descripcion) VALUES ('pruebaaa')";
     
     $result = mysqli_query($db, $texto);
     print_r($result);
