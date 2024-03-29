@@ -77,7 +77,7 @@ if ($_SESSION['login_user'] == NULL )
 <title>ClipWEB - Iniciar sesion</title>
 </head>
 <body>
-    <table border="1">
+    <table style="width:100%">
     
     <form action="#" method="POST">
     <p>
