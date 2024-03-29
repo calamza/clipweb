@@ -23,7 +23,7 @@ if(isset($_POST['username']) && isset($_POST['password'])){
         //ldap_sort($ldap,$result,"sn");
         $info = ldap_get_entries($ldap, $result);
         echo "Existe el usuario";
-        echo count($result);
+        echo count($info,1);
         for ($i=0; $i<$info["count"]; $i++)
         {
             if($info['count'] > 1)
