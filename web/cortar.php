@@ -18,7 +18,7 @@ $descripcion = $_POST['descripcion'];
 </head>
 <body>
 
-<table style="width:40%" border="1" align="left">
+<table>
      
 <?php
 
@@ -71,7 +71,7 @@ if ($permanente==0) {
     <h3><a href = "index.php">Volver</a></h3></br>
     <h3><a href = "logout.php">Sign Out</a></h3>
 </body>
-</head>
+
 </html>
 
 <?php
