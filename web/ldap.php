@@ -10,7 +10,7 @@ $dn = "CN=Javier Alberto Tassi,OU=UNO MEDIOS S.A.,OU=UnoMedios S.A.,OU=Medios,DC
 $pass = 'Aa12162389"';
 $ldapbind = ldap_bind($ds, $dn, $pass); //this is the point we are authenticating
 
-$dn = "OU=Medios,DC=unomedios,DC=com,DC=ar"; //very important: in which part of your database are you looking
+$dn = "CN=G_Administracion_OU,OU=Grupos_Medios,OU=Medios,DC=unomedios,DC=com,DC=ar"; //very important: in which part of your database are you looking
 $filter = "cn=*"; //don't filter anyone out (every user has a uid)
 $sr = ldap_search($ds, $dn, $filter) or die ("bummer"); //define your search scope
 
