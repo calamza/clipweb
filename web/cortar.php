@@ -51,7 +51,6 @@ if ($permanente==0) {
     <tr><td>  <?php echo "https://clipcms.unomedios.com.ar/clips/clip-".$videoid."-".$randomID.".mp4  "; ?></td> 
     <td><a href='download.php?url=<?php echo "clips/clip-".$videoid."-".$randomID.".mp4"; ?> '> Descargar clip </a></tr></td></br></br></br>
 <?php
-    echo "permanente es 0";
     $sql = "INSERT INTO descripcion (id, usuario, descripcion, link) VALUES ('', $login_session, $descripcion, 'download.php?url=clips/clip-.$videoid.$randomID.mp4')";
     if (mysqli_query($db, $sql)) {
         echo "Registro creado";
