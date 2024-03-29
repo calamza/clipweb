@@ -71,7 +71,7 @@ if ($_SESSION['login_user'] == NULL )
 {
 ?>
     <form action="#" method="POST">
-        <label for="username">Username: </label><input id="username" type="text" name="username" /> 
-        <label for="password">Password: </label><input id="password" type="password" name="password" />        <input type="submit" name="submit" value="Submit" />
+        <label for="username">Nombre de usuario: </label><input id="username" type="text" name="username" /> El mismo que usas en la compu </br>
+        <label for="password">Clave: </label><input id="password" type="password" name="password" /> </br>       <input type="submit" name="submit" value="Submit" />
     </form>
 <?php } } ?> 
