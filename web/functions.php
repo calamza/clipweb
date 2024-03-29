@@ -5,7 +5,7 @@
 
 function save_history($texto) {
     //$texto = "INSERT INTO links (descripcion) VALUES ('pruebaaa')";
-    //$texto = "INSERT INTO links (usuario, description) value (javier, kalkakakaka)";
+    $texto = "INSERT INTO links (usuario, description) values ('javier', 'kalkakakaka')";
     include('config.php');
     echo "<strong>El texto a mostrar es el siguiente: </strong>";
     echo $texto;
