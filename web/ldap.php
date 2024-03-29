@@ -38,9 +38,6 @@ if(isset($_POST['username']) && isset($_POST['password'])){
                 //echo $info[$i]["memberof"][$j];
                 if ($info[$i]["memberof"][$j] == "CN=G_ClipWeb,OU=Grupos_Medios,OU=Medios,DC=unomedios,DC=com,DC=ar") {
                     echo "si pertenece al grupo";
-                } else {
-                    echo "no pertenece al grupo";
-
                 }
             }
             
