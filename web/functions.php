@@ -3,7 +3,7 @@ include('config.php');
 function save_history($texto) {
     $texto = "INSERT INTO links ('descripcion') VALUES ('pruebaaa')";
     
-    $result = mysqli_query($db, "INSERT INTO links ('descripcion') VALUES ('pruebaaa')");
+    $result = mysqli_query($db, "SELECT * FROM links");
     print_r($result);
     die("waiting...");
     if ($result === false) {
