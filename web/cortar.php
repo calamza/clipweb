@@ -1,5 +1,5 @@
 <?php
-include('session.php');
+include('ldap.php');
 include('config.php');
 ob_start();
 $videoid = $_POST['videoid'];
