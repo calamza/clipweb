@@ -83,11 +83,10 @@ if ($_SESSION['login_user'] == NULL )
     <table style="width:100%">
     
     <form action="#" method="POST">
-    <p><font SIZE=7>
+    <p>
     <tr><td><label for="username">Nombre de usuario: </label><input id="username" type="text" name="username" /></td></tr>
     <tr><td><label for="password">Clave: </label><input id="password" type="password" name="password" /> </td></tr>
     <tr><td><input type="submit" name="submit" value="Iniciar sesion" /></td></tr>
-    </font>
     </p>
     </form>
     </table>
