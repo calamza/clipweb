@@ -7,7 +7,7 @@ if($_SERVER['HTTP_REFERER'] == "https://mediacms.unomedios.com.ar/") {
   #header("location: index.php");
 }
 #Iniciar sesion
-include('ldap.php');
+//include('ldap.php');
 
 echo $_SESSION['login_user'];
 
