@@ -1,3 +1,5 @@
+<?php
+
 $server = "unomedios.com.ar";  //this is the LDAP server you're connecting with
 $ds = ldap_connect("ldap://$server", 389); //always connect securely via LDAPS when possible
 
@@ -14,3 +16,5 @@ $sr = ldap_search($ds, $dn, $filter) or die ("bummer"); //define your search sco
 
 $results = ldap_get_entries($ds, $sr); //here we are pulling the actual entries from the search we just defined
 var_dump($results); //will give you all results is array form. 
+
+?>
