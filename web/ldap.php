@@ -21,7 +21,7 @@ if(isset($_POST['username']) && isset($_POST['password'])){
         $filter="(sAMAccountName=$username)";
         $ADGroup="G_SI";
         $filter_group="(&(memberOf=" .$ADGroup. "))";
-        $result = ldap_search($ldap,"dc=unomedios,dc=com,dc=ar",$filter,$filter_group);
+        $result = ldap_search($ldap,"dc=unomedios,dc=com,dc=ar",$filter_group);
         //ldap_sort($ldap,$result,"sn");
         $info = ldap_get_entries($ldap, $result);
         echo "entro!";
