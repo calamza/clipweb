@@ -12,7 +12,7 @@ include('session.php');
 
 </head>
 <body>
-<h1>Historico de links creados por <?php echo $login_session; ?></h1>
+<h2>Historico de links creados por <?php echo $login_session; ?></h2>
 <p>
 <table style="width:50%">
     <tr><td>Video ID</td></tr>
