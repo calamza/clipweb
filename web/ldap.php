@@ -31,13 +31,13 @@ if(isset($_POST['username']) && isset($_POST['password'])){
             //echo "<p>You are accessing <strong> ". $info[$i]["memberof"][1] .", " . $info[$i]["givenname"][0] ."</strong><br /> (" . $info[$i]["samaccountname"][0] .")</p>\n";
             $groups_count=count($info[$i],1);
             echo $groups_count;
-            /*
-            for ($j=0; $j<25; $j++)
+            
+            for ($j=0; $j<$groups_count; $j++)
             {
                 echo "<p>dentro del segundo for</p>\n".$j;
-                //echo $info[$i]["memberof"][$j];
+                echo $info[$i]["memberof"][$j];
             }
-            */
+            
             echo "esta dentro del primer for";
             echo '<pre>';
             //var_dump($info);
