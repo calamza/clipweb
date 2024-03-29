@@ -77,11 +77,13 @@ if ($_SESSION['login_user'] == NULL )
 <title>ClipWEB - Iniciar sesion</title>
 </head>
 <body>
+<p><h2>Iniciar sesion con su usuario de la compu (apellido.nombre )</h2></p>
+</br></br></br>
     <table style="width:100%">
     
     <form action="#" method="POST">
     <p>
-    <tr><td><label for="username">Nombre de usuario: </label><input id="username" type="text" name="username" /> El mismo que usas en la compu </td></tr>
+    <tr><td><label for="username">Nombre de usuario: </label><input id="username" type="text" name="username" /></td></tr>
     <tr><td><label for="password">Clave: </label><input id="password" type="password" name="password" /> </td></tr>
     <tr><td><input type="submit" name="submit" value="Iniciar sesion" /></td></tr>
     </p>
