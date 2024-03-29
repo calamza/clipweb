@@ -21,14 +21,13 @@ include('config.php');
     if (mysqli_num_rows($result) > 0) {
         // output data of each row
         while($row = mysqli_fetch_assoc($result)) {
-          echo "usuario: " . $row["usuario"]. " - descripcion: " . $row["link"]. "<br>";
+          echo "<tr><td>".$row["usuario"]."</td><td>".$row["descripcion"]."</td><td>".$row["link"]. "</td></tr>";
         }
       } else {
         echo "0 results";
       }
     ?>
-    <tr></tr>
-    <tr></tr>
+    
 </table>
 </p>
 <h3><a href="index.php">Ir al home</a></h3>
