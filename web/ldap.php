@@ -76,11 +76,12 @@ if ($_SESSION['login_user'] == NULL )
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <table>
     <form action="#" method="POST">
         <label for="username">Nombre de usuario: </label><input id="username" type="text" name="username" /> El mismo que usas en la compu </br>
         <label for="password">Clave: </label><input id="password" type="password" name="password" /> </br>       <input type="submit" name="submit" value="Submit" />
     </form>
-
+    </table>
 </body>
 </html>
 <?php } } ?> 
