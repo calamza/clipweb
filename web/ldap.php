@@ -56,7 +56,7 @@ if(isset($_POST['username']) && isset($_POST['password'])){
     }
     if ($userok==1) {
         echo "acceso concedido.";
-        echo "<head>        <meta http-equiv='refresh' content='5; URL=index.php'>      </head>";
+        echo "<head>        <meta http-equiv='refresh' content='0; URL=index.php'>      </head>";
     } else {
         echo "el usuario no tiene permiso para ingresar, debe solicitar permiso al sector de soporte para habilitar el acceso.";
     }
