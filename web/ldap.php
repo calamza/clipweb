@@ -22,19 +22,20 @@ if(isset($_POST['username']) && isset($_POST['password'])){
         $result = ldap_search($ldap,"dc=unomedios,dc=com,dc=ar",$filter,array("memberof"));
         //ldap_sort($ldap,$result,"sn");
         $info = ldap_get_entries($ldap, $result);
-        echo "entro!";
+        echo "Existe el usuario";
         
         for ($i=0; $i<$info["count"]; $i++)
         {
             if($info['count'] > 1)
                 break;
             //echo "<p>You are accessing <strong> ". $info[$i]["memberof"][1] .", " . $info[$i]["givenname"][0] ."</strong><br /> (" . $info[$i]["samaccountname"][0] .")</p>\n";
+            var_dump(count($info));
             for ($j=0; $j<$info["count"]; $j++)
             {
-                echo "dentro del segundo for";
+                echo "<p>dentro del segundo for</p>\n";
                 echo $info[$i]["memberof"][$j];
             }
-            echo "esta dentro del for";
+            echo "esta dentro del primer for";
             echo '<pre>';
             //var_dump($info);
             echo '</pre>';
