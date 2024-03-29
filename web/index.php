@@ -30,6 +30,7 @@ if (isset($_SESSION['videoID'])) {
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="style.css">
 <title>ClipWEB - Cortar videos para compartir</title>
 
 </head>
