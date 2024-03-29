@@ -49,7 +49,7 @@ if ($permanente==0) {
     shell_exec("ffmpeg -i downloads/".$videoid.".mp4  -ss ".$inicio." -to ".$fin." -c:v copy -c:a copy clips/clip-".$videoid."-".$randomID.".mp4");
 ?>
     <tr><td>  <?php echo "https://clipcms.unomedios.com.ar/clips/clip-".$videoid."-".$randomID.".mp4  "; ?></td> 
-    <td><a href='download.php?url=<?php echo "clips/clip-".$videoid."-".$randomID.".mp4"; ?> '> </br>Descargar clip </a></tr></td></br>
+    <td><a href='download.php?url=<?php echo "clips/clip-".$videoid."-".$randomID.".mp4"; ?> '> Descargar clip </a></td></tr></br>
 <?php
     $sql = "INSERT INTO descripcion (id, usuario, descripcion, link) VALUES ('', $login_session, $descripcion, 'download.php?url=clips/clip-.$videoid.$randomID.mp4')";
     if (mysqli_query($db, $sql)) {
