@@ -70,8 +70,17 @@ if(isset($_POST['username']) && isset($_POST['password'])){
 if ($_SESSION['login_user'] == NULL )
 {
 ?>
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
     <form action="#" method="POST">
         <label for="username">Nombre de usuario: </label><input id="username" type="text" name="username" /> El mismo que usas en la compu </br>
         <label for="password">Clave: </label><input id="password" type="password" name="password" /> </br>       <input type="submit" name="submit" value="Submit" />
     </form>
+
+</body>
+</html>
 <?php } } ?> 
