@@ -33,8 +33,9 @@ if(isset($_POST['username']) && isset($_POST['password'])){
             for ($j=0; $j<$info["count"]; $j++)
             {
                 echo "<p>dentro del segundo for</p>\n";
-                echo $info[$i]["memberof"][$j];
+                
             }
+            echo $info[$i]["memberof"][2];
             echo "esta dentro del primer for";
             echo '<pre>';
             //var_dump($info);
