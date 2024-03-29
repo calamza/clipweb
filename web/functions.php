@@ -1,7 +1,7 @@
 <?php
 include('config.php');
 function save_history($texto) {
-    $texto = "INSERT INTO descripcion(descripcion) VALUES ('ASD')";
+    $texto = "INSERT INTO links (descripcion) VALUES ('pruebaaa')";
     if (mysqli_query($db, $texto)) {
         echo "Record inserted successfully";  
     }else{  
