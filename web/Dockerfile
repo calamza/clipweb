@@ -5,7 +5,7 @@
 #CMD [ "php", "./your-script.php" ]
 
 #FROM ubuntu/apache2:latest
-FROM php:8.2-apache
+FROM php:7.4-apache
 
 RUN apt-get update
 #RUN apt install -y php libapache2-mod-php
