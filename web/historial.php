@@ -14,6 +14,7 @@ include('config.php');
 <body>
 <h2>Historico de links creados por <?php echo $login_session; ?></h2>
 <p>
+</br></br>
 <table style="width:50%">
     <tr><td>Video ID</td><td>Link</td><td>Descripcion</td></tr>
     <?php
