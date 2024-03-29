@@ -68,10 +68,8 @@ if ($permanente==0) {
 ?>
     
 </table>
-
 <h2><a href = "logout.php">Cerrar sesion</a></h2>
 </body>
-
 </html>
 
 <?php
