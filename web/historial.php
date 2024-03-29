@@ -16,7 +16,7 @@ include('config.php');
 <p>
 </br></br>
 <table style="width:100%">
-    <tr><td>Usuario</td><td>Descripcion</td><td>Link</td><td>Link Video Original</td><td>Tiempo de inicio del video original</td><td>Tiempo fin del video original</td></tr>
+    <h3><tr><td>Usuario</td><td>Descripcion</td><td>Link</td><td>Link Video Original</td><td>Tiempo de inicio del video original</td><td>Tiempo fin del video original</td></tr></h3>
     <?php
     $result = mysqli_query($db_link, "SELECT usuario,descripcion,link,videoid,inicio,fin FROM links");
     if (mysqli_num_rows($result) > 0) {
