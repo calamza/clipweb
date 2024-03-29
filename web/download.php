@@ -1,5 +1,6 @@
 <?php
 include('ldap.php');
+include('session.php');
 $file = $_GET['url'];
 #$file = $_GET['f']; 
 

@@ -1,13 +1,9 @@
 <?php
 include('ldap.php');
 include('config.php');
+include('session.php');
 ob_start();
-if ($_SESSION['login_user'] == "") {
-    header("location: ldap.php");
-    //echo $_SESSION['login_user'];
-} else {
-$login_session = $_SESSION['login_user'];
-}
+
 $videoid = $_POST['videoid'];
 $inicio = $_POST['inicio'];
 $fin = $_POST['fin'];
