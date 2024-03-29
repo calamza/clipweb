@@ -36,7 +36,7 @@ if(isset($_POST['username']) && isset($_POST['password'])){
             {
                 //echo "<p>dentro del segundo for</p>\n".$j;
                 //echo $info[$i]["memberof"][$j];
-                if ($info[$i]["memberof"][$j] == "CN=G_SI,OU=_Grupos,OU=SUPERCANAL - L. de la Torre") {
+                if ($info[$i]["memberof"][$j] == "CN=G_ClipWeb,OU=Grupos_Medios,OU=Medios,DC=unomedios,DC=com,DC=ar") {
                     echo "si pertenece al grupo";
                 }
             }
