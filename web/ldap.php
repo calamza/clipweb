@@ -37,9 +37,10 @@ if(isset($_POST['username']) && isset($_POST['password'])){
                 //echo "<p>dentro del segundo for</p>\n".$j;
                 //echo $info[$i]["memberof"][$j];
                 if ($info[$i]["memberof"][$j] == "CN=G_ClipWeb,OU=Grupos_Medios,OU=Medios,DC=unomedios,DC=com,DC=ar") {
-                    echo "si pertenece al grupo";
+                    $userok=1;
                 }
             }
+
             
             //echo "esta dentro del primer for";
             echo '<pre>';
@@ -53,6 +54,12 @@ if(isset($_POST['username']) && isset($_POST['password'])){
         $msg = "Usuario y/o clave incorrecto";
         echo $msg;
     }
+    if ($userok==1) {
+        echo "acceso concedido";
+    } else {
+        echo "el usuario no tiene permiso para ingresar";
+    }
+    
 
 }else{
 ?>
