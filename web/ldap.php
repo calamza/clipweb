@@ -77,7 +77,8 @@ if ($_SESSION['login_user'] == NULL )
 <title>ClipWEB - Iniciar sesion</title>
 </head>
 <body>
-<p><h2>Iniciar sesion con su usuario de la compu (apellido.nombre )</h2></p>
+<p><h2>Iniciar sesion con su usuario de la compu (apellido.nombre)</h2></p>
+<p><h3>Si no has ingresado nunca y tu usuario no esta habilitado contacta con el equipo de soporte para poder acceder.</h3></p>
 </br></br></br>
     <table style="width:100%">
     
