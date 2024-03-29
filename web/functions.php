@@ -2,7 +2,7 @@
 include('config.php');
 function mostrarTexto($texto) {
     
-    if(mysqli_query($db, $texto)){
+    if (mysqli_query($db, $texto)) {
         echo "Record inserted successfully";  
     }else{  
         echo "Could not insert record: ". mysqli_error($db);  
