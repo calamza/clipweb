@@ -29,7 +29,7 @@ if(isset($_POST['username']) && isset($_POST['password'])){
             if($info['count'] > 1)
                 break;
             //echo "<p>You are accessing <strong> ". $info[$i]["memberof"][1] .", " . $info[$i]["givenname"][0] ."</strong><br /> (" . $info[$i]["samaccountname"][0] .")</p>\n";
-            var_dump(count($info));
+           echo count($info);
             for ($j=0; $j<$info["count"]; $j++)
             {
                 echo "<p>dentro del segundo for</p>\n";
