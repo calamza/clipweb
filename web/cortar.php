@@ -40,10 +40,10 @@ $url_original=$temp_original2['url'];
 ## Comprueba si el archivo existe para no tener que volver a descargarlo
 $filename = 'downloads/'.$videoid.'.mp4';
 if (file_exists($filename)) {
-    echo "<tr><td colspan='2'>Archivo original de video en cache, generacion rapida de clip</td></tr>";
+    echo "<tr><td colspan='2'><h4>Archivo original de video en cache, generacion rapida de clip</h4></td></tr>";
 } else {
     //echo "The file $filename does not exist";
-    echo "<tr><td colspan='2'>El archivo original de video ahora esta en cache, generacion rapida de clips de este video disponible por 2 horas</td></tr>";
+    echo "<tr><td colspan='2'><h4>El archivo original de video ahora esta en cache, generacion rapida de clips de este video disponible por 2 horas</h4></td></tr>";
     shell_exec("wget --no-use-server-timestamps -O downloads/".$videoid.".mp4 https://mediacms.unomedios.com.ar".$url_original);
 }
 
