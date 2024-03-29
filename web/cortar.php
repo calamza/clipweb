@@ -12,7 +12,7 @@ $descripcion = $_POST['descripcion'];
 <!DOCTYPE html>
 <html>
 <head>
-
+<link rel="stylesheet" href="style.css">
 <title>ClipWEB - Cortar videos para compartir</title>
 
 </head>
@@ -68,8 +68,8 @@ if ($permanente==0) {
     
 </table>
 </br></br></br></br></br></br>
-    <h3><a href = "index.php">Volver</a></h3></br>
-    <h3><a href = "logout.php">Sign Out</a></h3>
+    <h2><a href = "index.php">Volver</a></h2></br>
+    <h2><a href = "logout.php">Sign Out</a></h2>
 </body>
 
 </html>
