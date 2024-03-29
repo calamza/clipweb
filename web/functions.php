@@ -7,27 +7,14 @@ function save_history($texto) {
     $texto = "INSERT INTO links (descripcion) VALUES ('pruebaaa')";
     include('config.php');
     $result = mysqli_query($db_link, "SELECT * FROM links");
-    print_r($result);
-    die("waiting...");
-    if ($result === false) {
-        printf("error: %s\n", mysqli_error($db_link));
-        return 0;
-    }
-    /*
-    if ( false===$result ) {
-        printf("error: %s\n", mysqli_error($db));
-    } else {
-        echo 'done.';
-    }
-    */
-    /*
-    if (mysqli_query($db, $texto)) {
+    
+    if (mysqli_query($db_link, $texto)) {
         echo "Record inserted successfully";  
     }else{  
-        echo "Could not insert record: ". mysqli_error($db);  
+        echo "Could not insert record: ". mysqli_error($db_link);  
     }
-        mysqli_close($db);
-    */
+        mysqli_close($db_link);
+    
     
     echo "<strong>El texto a mostrar es el siguiente: </strong>";
 
