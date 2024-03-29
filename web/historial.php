@@ -15,9 +15,9 @@ include('session.php');
 <h2>Historico de links creados por <?php echo $login_session; ?></h2>
 <p>
 <table style="width:50%">
-    <tr><td>Video ID</td></tr>
-    <tr><td>Link</td></tr>
-    <tr><td>Descripcion</td></tr>
+    <tr><td>Video ID</td><td>Link</td><td>Descripcion</td></tr>
+    <tr></tr>
+    <tr></tr>
 </table>
 </p>
 <h3><a href="index.php">Ir al home</a></h3>
