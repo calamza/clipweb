@@ -2,6 +2,7 @@
 /**
  * Created by Joe of ExchangeCore.com
  */
+session_start();
 if(isset($_POST['username']) && isset($_POST['password'])){
 
     $adServer = "ldap://unomedios.com.ar";
