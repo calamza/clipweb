@@ -45,7 +45,7 @@ if ($_SESSION['videoID']==NULL) {
 <form action="cortar.php" method="post">
 <fieldset>
 <!-- Form Name -->
-<legend>Identificar video</legend>
+<h3>Identificar video</h3>
 <!-- Text input-->
 
   <table style="width:50%">
