@@ -58,7 +58,7 @@ if ($permanente==0) {
     $sql = "INSERT INTO descripcion (id, usuario, descripcion, link) VALUES (, ".$login_session.", ".$descripcion.",download.php?url=clips/clip-".$videoid."-".$randomID.".mp4)";
     //echo $sql;
     echo $db;
-    mysqli_query($db, $sql)
+    mysqli_query($db, $sql);
     /*
     if (mysqli_query($db, $sql)) {
         echo "Registro creado";
