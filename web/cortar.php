@@ -62,7 +62,7 @@ if ($permanente==0) {
     shell_exec("ffmpeg -i downloads/".$videoid.".mp4  -ss ".$inicio." -to ".$fin." -c:v copy -c:a copy clips-permanentes/clip-".$videoid."-".$randomID.".mp4");
 ?>
     <tr><td>  <?php echo "https://clipcms.unomedios.com.ar/clips-permanentes/clip-".$videoid."-".$randomID.".mp4  "; ?></td> </tr>
-    <tr><td><a href='download.php?url=<?php echo "clips-permanentes/clip-".$videoid."-".$randomID.".mp4"; ?> '> Descargar clip </a></td></tr>
+    <tr><td><a href='download.php?url=<?php echo "clips-permanentes/clip-".$videoid."-".$randomID.".mp4"; ?> '> Descargar clip </a></td></tr>lalalalal
 <?php
 }
 ?>
