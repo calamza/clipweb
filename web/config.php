@@ -8,7 +8,7 @@
    */
    $db_server="db:3306";
    $db_username="ingesta_web";
-   $db_password="Lg3681Lg";
+   $db_password="Lg3681Lgs";
    $db_database="ingesta_db";
    $db_link=mysqli_connect($db_server, $db_username, $db_password,$db_database);
    if (!$db_link) {
