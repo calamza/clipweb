@@ -22,7 +22,7 @@ if(isset($_POST['username']) && isset($_POST['password'])){
         $result = ldap_search($ldap,"dc=unomedios,dc=com,dc=ar",$filter,array("memberof"));
         //ldap_sort($ldap,$result,"sn");
         $info = ldap_get_entries($ldap, $result);
-        echo "Existe el usuario";
+        //echo "Existe el usuario";
         
         for ($i=0; $i<$info["count"]; $i++)
         {
@@ -34,11 +34,13 @@ if(isset($_POST['username']) && isset($_POST['password'])){
             
             for ($j=0; $j<$groups_count; $j++)
             {
-                echo "<p>dentro del segundo for</p>\n".$j;
-                echo $info[$i]["memberof"][$j];
+                //echo "<p>dentro del segundo for</p>\n".$j;
+                //echo $info[$i]["memberof"][$j];
+                if ($info[$i]["memberof"][$j] == "G_SI")
+                    echo "si pertenece al grupo"
             }
             
-            echo "esta dentro del primer for";
+            //echo "esta dentro del primer for";
             echo '<pre>';
             //var_dump($info);
             echo '</pre>';
