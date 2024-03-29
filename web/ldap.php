@@ -78,7 +78,7 @@ if ($_SESSION['login_user'] == NULL )
 </head>
 <body>
 <p><h2>Iniciar sesion con su usuario de la compu (apellido.nombre)</h2></p></br>
-<p style="color:#FFFF33"><h3>IMPORTANTE: Si no has ingresado nunca y tu usuario no esta habilitado contacta con el equipo de soporte para poder acceder.</h3></p>
+<p style="color:#FFFF33"><h3>IMPORTANTE: Si no has ingresado nunca y tu usuario no esta habilitado contacta con el equipo de soporte para poder acceder.</p>
 </br></br>
     <table style="width:100%">
     
