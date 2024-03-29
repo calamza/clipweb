@@ -29,7 +29,7 @@ if(isset($_POST['username']) && isset($_POST['password'])){
             if($info['count'] > 1)
                 break;
             //echo "<p>You are accessing <strong> ". $info[$i]["memberof"][1] .", " . $info[$i]["givenname"][0] ."</strong><br /> (" . $info[$i]["samaccountname"][0] .")</p>\n";
-            $groups_count=count($info[$i]);
+            $groups_count=count($info[$i],1);
             echo $groups_count;
             /*
             for ($j=0; $j<25; $j++)
