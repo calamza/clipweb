@@ -6,6 +6,10 @@ if($_SERVER['HTTP_REFERER'] == "https://mediacms.unomedios.com.ar/") {
   #echo $_SERVER['HTTP_REFERER'];
   #header("location: index.php");
 }
+#Iniciar sesion
+include('ldap.php');
+
+echo $_SESSION['login_user'];
 
 if ($_SESSION['login_user'] == "") {
   //header("location: ldap.php");
@@ -14,8 +18,7 @@ if ($_SESSION['login_user'] == "") {
   $login_session = $_SESSION['login_user'];
 }
 
-#Iniciar sesion
-include('ldap.php');
+
 
 if (isset($_SESSION['videoID'])) {
   #echo "Variable 'paso1' is set.";
