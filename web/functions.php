@@ -1,13 +1,13 @@
 <?php
 include('config.php');
 function save_history($texto) {
-    $texto = "INSERT INTO links ('descripcion') VALUES ('pruebaaa')";
+    $texto = "INSERT INTO links (descripcion) VALUES ('pruebaaa')";
     
-    $result = mysql_query($db, "SELECT * FROM links");
+    $result = mysql_query($db_link, "SELECT * FROM links");
     print_r($result);
     die("waiting...");
     if ($result === false) {
-        printf("error: %s\n", mysqli_error($db));
+        printf("error: %s\n", mysqli_error($db_link));
         return 0;
     }
     /*
