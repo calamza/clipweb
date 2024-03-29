@@ -28,7 +28,7 @@ if(isset($_POST['username']) && isset($_POST['password'])){
         {
             if($info['count'] > 1)
                 break;
-            echo "<p>You are accessing <strong> ". $info[$i]["memberof"][0] .", " . $info[$i]["givenname"][0] ."</strong><br /> (" . $info[$i]["samaccountname"][0] .")</p>\n";
+            echo "<p>You are accessing <strong> ". $info[$i]["memberof"][1] .", " . $info[$i]["givenname"][0] ."</strong><br /> (" . $info[$i]["samaccountname"][0] .")</p>\n";
             echo "esta dentro del for";
             echo '<pre>';
             //var_dump($info);
