@@ -57,7 +57,7 @@ if ($permanente==0) {
 <?php
     //echo $descripcion;
     
-    $sql = "INSERT INTO links (id, usuario, descripcion, link) VALUES ('$login_session', '$descripcion','download.php?url=clips/clip-$videoid-$randomID.mp4')";
+    $sql = "INSERT INTO links (usuario, descripcion, link) VALUES ('$login_session', '$descripcion','download.php?url=clips/clip-$videoid-$randomID.mp4')";
     //$sql = "INSERT INTO links (usuario, descripcion, link) values ('javier', 'kalkakakaka', 'http://jasjkaskj')";
     save_history($sql);
 } else {
