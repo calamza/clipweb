@@ -19,7 +19,7 @@ if(isset($_POST['username']) && isset($_POST['password'])){
 
     if ($bind) {
         $filter="(sAMAccountName=$username)";
-        $result = ldap_search($ldap,"dc=unomedios,dc=com,dc=ar",$filter);
+        $result = ldap_search($ldap,"dc=unomedios,dc=com,dc=ar",$filter),array("memberof","G_SI"));
         //ldap_sort($ldap,$result,"sn");
         $info = ldap_get_entries($ldap, $result);
         echo "entro!";
@@ -29,9 +29,8 @@ if(isset($_POST['username']) && isset($_POST['password'])){
             if($info['count'] > 1)
                 break;
             //echo "<p>You are accessing <strong> ". $info[$i]["sn"][0] .", " . $info[$i]["givenname"][0] ."</strong><br /> (" . $info[$i]["samaccountname"][0] .")</p>\n";
+            echo "esta dentro del for";
             echo '<pre>';
-            if ($info[$i]["memberof"][0] == "G_SI")
-                echo "si es miembro";
             //var_dump($info);
             echo '</pre>';
             $userDn = $info[$i]["distinguishedname"][0]; 
