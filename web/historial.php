@@ -22,7 +22,7 @@ include('config.php');
     if (mysqli_num_rows($result) > 0) {
         // output data of each row
         while($row = mysqli_fetch_assoc($result)) {
-          echo "<tr><td>".$row["usuario"]."</td><td>".$row["descripcion"]."</td><td>".$row["link"]. "</td><td><a href='https://mediacms.unomedios.com.ar/view?m=".$row["videoid"]. "'</a></td><td>".$row["inicio"]. "</td><td>".$row["fin"]. "</td></tr>";
+          echo "<tr><td>".$row["usuario"]."</td><td>".$row["descripcion"]."</td><td>".$row["link"]. "</td><td><a href='https://mediacms.unomedios.com.ar/view?m=".$row["videoid"]."'>Link!</a></td><td>".$row["inicio"]. "</td><td>".$row["fin"]. "</td></tr>";
         }
       } else {
         echo "0 results";
