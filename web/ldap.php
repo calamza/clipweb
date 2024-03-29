@@ -78,13 +78,14 @@ if ($_SESSION['login_user'] == NULL )
 </head>
 <body>
     <table>
-    <tr>
-    <form action="#" method="POST">
-        <td><label for="username">Nombre de usuario: </label><input id="username" type="text" name="username" /> El mismo que usas en la compu </br></td>
-        <td><label for="password">Clave: </label><input id="password" type="password" name="password" /> </br>       <input type="submit" name="submit" value="Submit" /></td>
     
+    <form action="#" method="POST">
+    <p>
+    <tr><td><label for="username">Nombre de usuario: </label><input id="username" type="text" name="username" /> El mismo que usas en la compu </td></tr>
+    <tr><td><label for="password">Clave: </label><input id="password" type="password" name="password" /> </td></tr>
+    <tr><td><input type="submit" name="submit" value="Submit" /></td></tr>
+    </p>
     </form>
-    <tr>
     </table>
 </body>
 </html>
