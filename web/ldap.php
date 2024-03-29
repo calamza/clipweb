@@ -36,8 +36,9 @@ if(isset($_POST['username']) && isset($_POST['password'])){
             {
                 //echo "<p>dentro del segundo for</p>\n".$j;
                 echo $info[$i]["memberof"][$j];
-                if ($info[$i]["memberof"][$j] == "G_SI")
+                if ($info[$i]["memberof"][$j] == "G_SI") {
                     echo "si pertenece al grupo";
+                }
             }
             
             //echo "esta dentro del primer for";
