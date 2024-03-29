@@ -1,9 +1,16 @@
 <?php
+include('config.php');
 function mostrarTexto($texto) {
+    
+    if(mysqli_query($db, $texto)){
+        echo "Record inserted successfully";  
+    }else{  
+        echo "Could not insert record: ". mysqli_error($db);  
+    }
+        mysqli_close($db);
+    echo "<strong>El texto a mostrar es el siguiente: </strong>";
 
-echo "<strong>El texto a mostrar es el siguiente: </strong>";
-
-echo $texto;
+    echo $texto;
 
 }
 
