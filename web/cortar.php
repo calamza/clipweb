@@ -17,7 +17,7 @@ $descripcion = $_POST['descripcion'];
 
 </head>
 <body>
-
+<h2><a href = "index.php">Ir al home</a></h2>
 <table>
      
 <?php
