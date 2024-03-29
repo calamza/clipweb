@@ -7,6 +7,7 @@ $inicio = $_POST['inicio'];
 $fin = $_POST['fin'];
 $permanente = $_POST['permanente'];
 $descripcion = $_POST['descripcion'];
+$login_session = $_SESSION['login_user'];
 
 ?>
 <!DOCTYPE html>
@@ -53,7 +54,7 @@ if ($permanente==0) {
     <tr><td><a href='download.php?url=<?php echo "clips/clip-".$videoid."-".$randomID.".mp4"; ?> '> Descargar clip </a></td></tr>
 <?php
     //echo $descripcion;
-    $sql = "INSERT INTO descripcion (id, usuario, descripcion, link) VALUES ('', ".$login_session.", ".$descripcion.", 'download.php?url=clips/clip-".$videoid.$randomID.".mp4')";
+    $sql = "INSERT INTO descripcion (id, usuario, descripcion, link) VALUES ('', ".$login_session.", ".$descripcion.", 'download.php?url=clips/clip-".$videoid."-".$randomID.".mp4')";
     echo $sql;
     if (mysqli_query($db, $sql)) {
         echo "Registro creado";
