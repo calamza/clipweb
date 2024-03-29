@@ -57,15 +57,15 @@ if ($permanente==0) {
     
     $sql = "INSERT INTO descripcion (id, usuario, descripcion, link) VALUES (, ".$login_session.", ".$descripcion.",download.php?url=clips/clip-".$videoid."-".$randomID.".mp4)";
     //echo $sql;
-    echo "la conexion".$db;
-    /*
+    //echo "la conexion".$db;
+    
     if(mysqli_query($db, $sql)){
        echo "Record inserted successfully";  
     }else{  
        echo "Could not insert record: ". mysqli_error($db);  
     }
        mysqli_close($db);
-    */
+    
     /*
     if (mysqli_query($db, $sql)) {
         echo "Registro creado";
