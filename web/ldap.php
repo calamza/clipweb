@@ -20,10 +20,10 @@ if(isset($_POST['username']) && isset($_POST['password'])){
     if ($bind) {
         $filter="(sAMAccountName=$username)";
         $result = ldap_search($ldap,"dc=unomedios,dc=com,dc=ar",$filter);
-        ldap_sort($ldap,$result,"sn");
-        //$info = ldap_get_entries($ldap, $result);
+        //ldap_sort($ldap,$result,"sn");
+        $info = ldap_get_entries($ldap, $result);
         echo "entro!";
-        /*
+        
         for ($i=0; $i<$info["count"]; $i++)
         {
             if($info['count'] > 1)
@@ -34,8 +34,8 @@ if(isset($_POST['username']) && isset($_POST['password'])){
             echo '</pre>';
             $userDn = $info[$i]["distinguishedname"][0]; 
         }
-        */
-        //@ldap_close($ldap);
+        
+        @ldap_close($ldap);
     } else {
         $msg = "Usuario y/o clave incorrecto";
         echo $msg;
