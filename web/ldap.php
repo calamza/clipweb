@@ -6,7 +6,7 @@ $ds = ldap_connect("ldap://$server", 389); //always connect securely via LDAPS w
 ldap_set_option($ds, LDAP_OPT_PROTOCOL_VERSION, 3);
 ldap_set_option($ds, LDAP_OPT_REFERRALS, 0);
 
-$dn = "cn=tassi.javier,cn=users,dc=server,dc=example,dc=com";
+$dn = "CN=Javier Alberto Tassi,OU=UNO MEDIOS S.A.,OU=UnoMedios S.A.,OU=Medios,DC=unomedios,DC=com,DC=ar";
 $pass = 'Aa12162389"';
 $ldapbind = ldap_bind($ds, $dn, $pass); //this is the point we are authenticating
 
