@@ -9,11 +9,11 @@ if($_SERVER['HTTP_REFERER'] == "https://mediacms.unomedios.com.ar/") {
 #Iniciar sesion
 include('ldap.php');
 
-echo $_SESSION['login_user'];
+//echo $_SESSION['login_user'];
 
 if ($_SESSION['login_user'] == "") {
-  //header("location: ldap.php");
-  echo $_SESSION['login_user'];
+  header("location: ldap.php");
+  //echo $_SESSION['login_user'];
 } else {
   $login_session = $_SESSION['login_user'];
 }
