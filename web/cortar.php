@@ -82,8 +82,8 @@ if ($permanente==0) {
 <?php
 }
 ?>
-  holaa  
 </table>
+</br></br>
 <h2><a href="logout.php">Cerrar sesion</a></h2>
 </body>
 </html>
