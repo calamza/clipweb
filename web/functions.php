@@ -6,6 +6,8 @@
 function save_history($texto) {
     //$texto = "INSERT INTO links (descripcion) VALUES ('pruebaaa')";
     include('config.php');
+    echo "<strong>El texto a mostrar es el siguiente: </strong>";
+    echo $texto;
     $result = mysqli_query($db_link, "SELECT * FROM links");
     
     if (mysqli_query($db_link, $texto)) {
@@ -14,11 +16,6 @@ function save_history($texto) {
         echo "Could not insert record: ". mysqli_error($db_link);  
     }
         mysqli_close($db_link);
-    
-    
-    //echo "<strong>El texto a mostrar es el siguiente: </strong>";
-
-    //echo $texto;
 
 }
 
