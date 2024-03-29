@@ -2,12 +2,12 @@
 include('config.php');
 function save_history($texto) {
     //$texto = "INSERT INTO links (descripcion) VALUES ('pruebaaa')";
-    if (mysql_query($db, $texto)) {
+    if (mysqli_query($db, $texto)) {
         echo "Record inserted successfully";  
     }else{  
         echo "Could not insert record: ". mysqli_error($db);  
     }
-        mysql_close($db);
+        mysqli_close($db);
     echo "<strong>El texto a mostrar es el siguiente: </strong>";
 
     echo $texto;
