@@ -4,7 +4,7 @@
 
 
 function save_history($texto) {
-    $texto = "INSERT INTO links (descripcion) VALUES ('pruebaaa')";
+    //$texto = "INSERT INTO links (descripcion) VALUES ('pruebaaa')";
     include('config.php');
     $result = mysqli_query($db_link, "SELECT * FROM links");
     
@@ -16,9 +16,9 @@ function save_history($texto) {
         mysqli_close($db_link);
     
     
-    echo "<strong>El texto a mostrar es el siguiente: </strong>";
+    //echo "<strong>El texto a mostrar es el siguiente: </strong>";
 
-    echo $texto;
+    //echo $texto;
 
 }
 
