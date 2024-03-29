@@ -16,13 +16,13 @@ include('config.php');
 <p>
 </br></br>
 <table style="width:100%">
-    <h3><tr><td>Usuario</td><td>Descripcion</td><td>Link</td><td>Link Video Original</td><td>Tiempo de inicio del video original</td><td>Tiempo fin del video original</td></tr></h3>
+    <h3><tr><td>Descripcion</td><td>Link</td><td>Link Video Original</td><td>Tiempo de inicio del video original</td><td>Tiempo fin del video original</td></tr></h3>
     <?php
     $result = mysqli_query($db_link, "SELECT usuario,descripcion,link,videoid,inicio,fin FROM links");
     if (mysqli_num_rows($result) > 0) {
         // output data of each row
         while($row = mysqli_fetch_assoc($result)) {
-          echo "<tr><td>".$row["usuario"]."</td><td>".$row["descripcion"]."</td><td>".$row["link"]. "</td><td><a href='https://mediacms.unomedios.com.ar/view?m=".$row["videoid"]."'>Link!</a></td><td>".$row["inicio"]. "</td><td>".$row["fin"]. "</td></tr>";
+          echo "<tr><td>".$row["descripcion"]."</td><td>".$row["link"]. "</td><td><a href='https://mediacms.unomedios.com.ar/view?m=".$row["videoid"]."'>Link!</a></td><td>".$row["inicio"]. "</td><td>".$row["fin"]. "</td></tr>";
         }
       } else {
         echo "0 results";
