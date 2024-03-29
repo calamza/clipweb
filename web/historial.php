@@ -2,7 +2,7 @@
 #Iniciar sesion
 include('ldap.php');
 include('session.php');
-
+include('config.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,6 +16,17 @@ include('session.php');
 <p>
 <table style="width:50%">
     <tr><td>Video ID</td><td>Link</td><td>Descripcion</td></tr>
+    <?php
+    $result = mysqli_query($db_link, "SELECT usuario,descripcion,link FROM links");
+    if (mysqli_num_rows($result) > 0) {
+        // output data of each row
+        while($row = mysqli_fetch_assoc($result)) {
+          echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
+        }
+      } else {
+        echo "0 results";
+      }
+    ?>
     <tr></tr>
     <tr></tr>
 </table>

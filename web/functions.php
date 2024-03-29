@@ -4,7 +4,7 @@ function save_history($texto) {
     include('config.php');
     //echo "<strong>El texto a mostrar es el siguiente: </strong>";
     //echo $texto;
-    $result = mysqli_query($db_link, "SELECT * FROM links");
+    //$result = mysqli_query($db_link, "SELECT * FROM links");
     
     if (mysqli_query($db_link, $texto)) {
         echo "Link guardado en mi historial\n";  
