@@ -40,8 +40,8 @@ if ($_SESSION['videoID']==NULL) {
 
   <table style="width:50%">
     <tr><td>VideoID<input type="text" name="videoid" pattern="[a-zA-Z0-9]{9}"> ID del video de mediacms, es lo que figura en la url despues del signo =</td></tr>
-    <tr><td>Inicio<input type="text" name="inicio" placeholder="00:00:00" pattern="[0-2]{2}:[0-59]{2}:[0-59]{2}"> en formato hora 01:02:03, hora, minuto y segundo en el que debe empezar respecto al original</td></tr>
-    <tr><td>Fin<input type="text" name="fin" placeholder="00:00:00" pattern="[0-2]{2}:[0-59]{2}:[0-59]{2}"> en formato hora 01:02:03, hora, minuto y segundo en el que debe finalizar respecto al original</td></tr>
+    <tr><td>Inicio<input type="text" name="inicio" placeholder="00:00:00" > en formato hora 01:02:03, hora, minuto y segundo en el que debe empezar respecto al original</td></tr>
+    <tr><td>Fin<input type="text" name="fin" placeholder="00:00:00"> en formato hora 01:02:03, hora, minuto y segundo en el que debe finalizar respecto al original</td></tr>
     <tr><td>Descripcion<input type="text" id="name" name="descripcion" required minlength="4" maxlength="50" size="80" /></td></tr>
     <tr><td>Clip en linea por 6 meses<input type="checkbox" name="permanente" value="checkox_value"></td></tr>
   </table>
