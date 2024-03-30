@@ -15,4 +15,18 @@ function save_history($texto) {
 
 }
 
+function check_videoid_existance($videoid){
+    
+    shell_exec("curl --write-out %{http_code} --silent --output /dev/null -X -k 'GET' 'https://mediacms.unomedios.com.ar/api/v1/media/K6rS3lz4s'-H 'accept: application/json' -H 'X-CSRFToken: iUyvDbVpdYP4sGuBzSqDwCaAX0SJMqAOUxAwYnt3pgGRa74vhtnleOl84pO5oTwq'");
+    /*
+    RESPONSE=$(curl --write-out %{http_code} --silent --output /dev/null ${URL})
+    if [ $RESPONSE -ne 200 ]
+    then
+        echo $1 is down
+    fi
+    */
+    echo "el id del video es".$videoid;
+
+}
+
 ?>
