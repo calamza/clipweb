@@ -14,7 +14,7 @@ $login_session = $_SESSION['login_user'];
 
 if (check_videoid_existance($videoid) == 0) {
     //echo "el id del video es incorrecto";
-    header("Location: index.php");
+    header("Location: index.php?error=videoid");
 }
 
 #check_videoid_existance($videoid);
