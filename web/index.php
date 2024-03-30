@@ -9,7 +9,8 @@ if($_SERVER['HTTP_REFERER'] == "https://mediacms.unomedios.com.ar/") {
 #Iniciar sesion
 include('ldap.php');
 include('session.php');
-
+$error = $_GET['error'];
+echo $error;
 if (isset($_SESSION['videoID'])) {
   #echo "Variable 'paso1' is set.";
 } else {
