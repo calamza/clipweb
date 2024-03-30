@@ -11,11 +11,13 @@ $fin = $_POST['fin'];
 $permanente = $_POST['permanente'];
 $descripcion = $_POST['descripcion'];
 $login_session = $_SESSION['login_user'];
+/*
 if (check_videoid_existance($videoid) == 0) {
     echo "el id del video es incorrecto";
 } else {
     echo "el id del video es correcto";
 }
+*/
 #check_videoid_existance($videoid);
 ?>
 <!DOCTYPE html>
