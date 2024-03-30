@@ -30,10 +30,9 @@ function check_videoid_existance($videoid){
 
     // 404 for error, 200 for no error 
     if(strpos($string, "200")) { 
-    echo 'Specified URL Exists'; 
-    }  
-    else { 
-    echo 'Specified URL does not exist'; 
+        return 1; 
+    } else { 
+        return 0; 
     } 
 
     //echo "el id del video es".$videoid;
