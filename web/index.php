@@ -11,7 +11,7 @@ include('ldap.php');
 include('session.php');
 $error = $_GET['error'];
 if ($error == "videoid") {
-  echo "Error en el id del VideoID, por favor verifique y vuelva a intentar";
+  echo "<h5>Error en el id del VideoID, por favor verifique y vuelva a intentar</h5>";
 }
 
 if (isset($_SESSION['videoID'])) {

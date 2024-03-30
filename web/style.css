@@ -125,6 +125,12 @@ h4{
     font-size:15px;
 	color:#1e71d0;
 }
+h5{
+	margin:0 0 10px 0;
+    font-size:18px;
+	color:#d50d0d;
+    font-weight:700;
+}
 blockquote{
 	background:#eee;
 	padding:15px;
