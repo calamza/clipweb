@@ -19,7 +19,7 @@ function check_videoid_existance($videoid){
     
     // Creating a variable with an URL 
     // to be checked 
-    $url = $videoid; 
+    $url = "https://mediacms.unomedios.com.ar/api/v1/media/".$videoid; 
 
     // Getting page header data 
     $array = @get_headers($url); 
