@@ -17,15 +17,26 @@ function save_history($texto) {
 
 function check_videoid_existance($videoid){
     
-    shell_exec("curl --write-out %{http_code} --silent --output /dev/null -X -k 'GET' 'https://mediacms.unomedios.com.ar/api/v1/media/K6rS3lz4s'-H 'accept: application/json' -H 'X-CSRFToken: iUyvDbVpdYP4sGuBzSqDwCaAX0SJMqAOUxAwYnt3pgGRa74vhtnleOl84pO5oTwq'");
-    /*
-    RESPONSE=$(curl --write-out %{http_code} --silent --output /dev/null ${URL})
-    if [ $RESPONSE -ne 200 ]
-    then
-        echo $1 is down
-    fi
-    */
-    echo "el id del video es".$videoid;
+    // Creating a variable with an URL 
+    // to be checked 
+    $url = 'https://mediacms.unomedios.com.ar/api/v1/media/K6rS3lz4s'; 
+
+    // Getting page header data 
+    $array = @get_headers($url); 
+
+    // Storing value at 1st position because 
+    // that is only what we need to check 
+    $string = $array[0]; 
+
+    // 404 for error, 200 for no error 
+    if(strpos($string, "200")) { 
+    echo 'Specified URL Exists'; 
+    }  
+    else { 
+    echo 'Specified URL does not exist'; 
+    } 
+
+    //echo "el id del video es".$videoid;
 
 }
 
