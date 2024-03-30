@@ -9,7 +9,7 @@ if($_SERVER['HTTP_REFERER'] == "https://mediacms.unomedios.com.ar/") {
 #Iniciar sesion
 include('ldap.php');
 include('session.php');
-$error = $_GET['error']
+$error = $_GET['error'];
 if ($error == "videoid") {
   echo "Error en el id del VideoID, por favor verifique y vuelva a intentar";
 }
