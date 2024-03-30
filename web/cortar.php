@@ -13,9 +13,8 @@ $descripcion = $_POST['descripcion'];
 $login_session = $_SESSION['login_user'];
 
 if (check_videoid_existance($videoid) == 0) {
-    echo "el id del video es incorrecto";
-} else {
-    echo "el id del video es correcto";
+    //echo "el id del video es incorrecto";
+    header("Location: index.php");
 }
 
 #check_videoid_existance($videoid);
