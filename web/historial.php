@@ -12,7 +12,9 @@ include('config.php');
 
 </head>
 <body>
+<h2><a href="index.php">Ir al home</a></h2>
 <h2>Historico de links creados por <?php echo $login_session; ?></h2>
+
 <p>
 </br></br>
 <table style="width:100%">
@@ -32,7 +34,7 @@ include('config.php');
     
 </table>
 </p>
-<h3><a href="index.php">Ir al home</a></h3>
+
 <h3><a href="docu.html">Guia del usuario</a></h3>
 <h3><a href="logout.php">Cerrar sesion</a></h3>
 
