@@ -23,7 +23,7 @@ include('config.php');
         // output data of each row
         while($row = mysqli_fetch_assoc($result)) {
           $link_download="https://clipcms.unomedios.com.ar/".$row["link"];
-          echo "<tr><td>".$row["descripcion"]."</td><td><a href='".$link_download. "'>Descargar clip</a></td><td><a href='https://mediacms.unomedios.com.ar/view?m=".$row["videoid"]."'>Ir al original!</a></td><td>".$row["inicio"]. "</td><td>".$row["fin"]. "</td></tr>";
+          echo "<tr><td>".$row["descripcion"]."</td><td><a href='".$link_download. "'>Descargar clip</a></td><td><a href='https://mediacms.unomedios.com.ar/view?m=".$row["videoid"]."'>Ir al original</a></td><td>".$row["inicio"]. "</td><td>".$row["fin"]. "</td></tr>";
         }
       } else {
         echo "0 results";
