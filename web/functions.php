@@ -55,9 +55,9 @@ function check_clip_existance($url){
 
     // 404 for error, 200 for no error 
     if(strpos($string, "200")) { 
-        return true; 
+        return 1; 
     } else { 
-        return false; 
+        return 0; 
     } 
 
     //echo "el id del video es".$videoid;
