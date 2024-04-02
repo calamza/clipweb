@@ -12,7 +12,7 @@ if (isset($users)) {
 } else {
   $users= NULL;
 }
-echo $username;
+echo $login_session;
 ?>
 <!DOCTYPE html>
 <html>
