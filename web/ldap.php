@@ -55,11 +55,11 @@ if(isset($_POST['username']) && isset($_POST['password'])){
         if (mysqli_num_rows($result_select) > 0) {
             while($row = mysqli_fetch_assoc($result_select)) {
                 if ($row["username"] == $username) {
-                    echo "es admin";
+                    echo "es admin\n";
                     echo $username;
                     $_SESSION['admin_user'] = 1;
                 } else {
-                    echo "no es admin";
+                    echo "no es admin\n";
                     $_SESSION['admin_user'] = 0;
                 }
             }
