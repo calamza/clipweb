@@ -2,7 +2,7 @@
 /**
  * Created by Joe of ExchangeCore.com
  */
-include('functions.php');
+//include('functions.php');
 session_start();
 if(isset($_POST['username']) && isset($_POST['password'])){
 
