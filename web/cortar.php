@@ -15,7 +15,7 @@ $login_session = $_SESSION['login_user'];
 if (check_videoid_existance($videoid) == 0) {
     //echo "el id del video es incorrecto";
     header("Location: index.php?error=videoid");
-}
+} else {
 
 #check_videoid_existance($videoid);
 ?>
@@ -86,4 +86,5 @@ if ($permanente==0) {
 #find ../downloads/ -type f -mtime +0.05
 ## Borrar el json al dope
 shell_exec("rm -f tmp.json");
+}
 ?>

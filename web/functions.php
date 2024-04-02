@@ -39,4 +39,28 @@ function check_videoid_existance($videoid){
 
 }
 
+function check_clip_existance($url){
+    
+    // Creating a variable with an URL 
+    // to be checked 
+    //$url = $url; 
+
+    // Getting page header data 
+    $array = @get_headers($url); 
+
+    // Storing value at 1st position because 
+    // that is only what we need to check 
+    $string = $array[0]; 
+
+    // 404 for error, 200 for no error 
+    if(strpos($string, "200")) { 
+        return 1; 
+    } else { 
+        return 0; 
+    } 
+
+    //echo "el id del video es".$videoid;
+
+}
+
 ?>
