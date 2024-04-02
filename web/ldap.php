@@ -56,8 +56,6 @@ if(isset($_POST['username']) && isset($_POST['password'])){
             while($row = mysqli_fetch_assoc($result_select)) {
                 if ($row["username"] == $username) {
                     $_SESSION['admin_user'] = 1;
-                } else {
-                    $_SESSION['admin_user'] = 0;
                 }
             }
         }
