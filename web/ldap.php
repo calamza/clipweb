@@ -2,6 +2,7 @@
 /**
  * Created by Joe of ExchangeCore.com
  */
+include('functions.php');
 session_start();
 if(isset($_POST['username']) && isset($_POST['password'])){
 
@@ -41,13 +42,6 @@ if(isset($_POST['username']) && isset($_POST['password'])){
                     $userok=1;
                 }
             }
-
-            
-            //echo "esta dentro del primer for";
-            //echo '<pre>';
-            //var_dump($info);
-            //echo '</pre>';
-            //$userDn = $info[$i]["distinguishedname"][0]; 
         }
         
         @ldap_close($ldap);
@@ -58,8 +52,11 @@ if(isset($_POST['username']) && isset($_POST['password'])){
     if ($userok==1) {
         echo "acceso concedido.";
         $_SESSION['login_user'] = $username;
-        //echo $_SESSION['login_user'];
-        //echo "<head>        <meta http-equiv='refresh' content='0; URL=index.php'>      </head>";
+        if (check_if_admin($username) == 1) {
+            $_SESSION['admin_user'] = 1;
+        } else {
+            $_SESSION['admin_user'] = 0;
+        }
         header("location:index.php");
     } else {
         echo "el usuario no tiene permiso para ingresar, debe solicitar permiso al sector de soporte para habilitar el acceso.";
