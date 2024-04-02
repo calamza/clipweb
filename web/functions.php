@@ -68,7 +68,9 @@ function check_if_admin($username) {
     if (mysqli_num_rows($result) > 0) {
         while($row = mysqli_fetch_assoc($result)) {
             if ($row["username"] == $username) {
-                echo "si es admin";
+                return 1;
+            } else {
+                return 0;
             }
         }
     }
