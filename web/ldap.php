@@ -1,7 +1,7 @@
 <?php
 
-include('config.php');
 session_start();
+include('config.php');
 if(isset($_POST['username']) && isset($_POST['password'])){
 
     $adServer = "ldap://unomedios.com.ar";
@@ -55,8 +55,10 @@ if(isset($_POST['username']) && isset($_POST['password'])){
         if (mysqli_num_rows($result_select) > 0) {
             while($row = mysqli_fetch_assoc($result_select)) {
                 if ($row["username"] == $username) {
+                    echo "es admin";
                     $_SESSION['admin_user'] = 1;
                 } else {
+                    echo "no es admin";
                     $_SESSION['admin_user'] = 0;
                 }
             }
@@ -72,7 +74,7 @@ if(isset($_POST['username']) && isset($_POST['password'])){
             //echo $_SESSION['admin_user'];
         }
         */
-        header("location:index.php");
+        //header("location:index.php");
     } else {
         echo "el usuario no tiene permiso para ingresar, debe solicitar permiso al sector de soporte para habilitar el acceso.";
     }
