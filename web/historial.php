@@ -5,6 +5,7 @@ include('session.php');
 include('config.php');
 include('functions.php');
 $filtro = $_GET['filtro'];
+$users = $_GET['users'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -26,23 +27,25 @@ $filtro = $_GET['filtro'];
 <table style="width:100%">
     <h3><tr><td>Descripcion</td><td>Link</td><td>Link Video Original</td><td>Tiempo de inicio del video original</td><td>Tiempo fin del video original</td></tr></h3>
     <?php
-    $result = mysqli_query($db_link, "SELECT usuario,descripcion,link,videoid,inicio,fin FROM links");
+    if ($users == "todos") {
+      $result = mysqli_query($db_link, "SELECT usuario,descripcion,link,videoid,inicio,fin FROM links");
+    } else {
+      $result = mysqli_query($db_link, "SELECT usuario,descripcion,link,videoid,inicio,fin FROM links WHERE usuario=$_SESSION['login_user']");
+    }
+    //$result = mysqli_query($db_link, "SELECT usuario,descripcion,link,videoid,inicio,fin FROM links");
     if (mysqli_num_rows($result) > 0) {
         // output data of each row
         while($row = mysqli_fetch_assoc($result)) {
           //check_clip_existance($row["link"]);
-          if ($filtro == "todos") {
-            echo "vista de admin";
-            if (check_clip_existance($row["link"]) == 1) {
-              if ($filtro == "activos" or $filtro == NULL) {
-                $link_download="https://clipcms.unomedios.com.ar/".$row["link"];
-                echo "<tr><td>".$row["descripcion"]."</td><td><a href='".$link_download. "'>Descargar clip</a></td><td><a href='https://mediacms.unomedios.com.ar/view?m=".$row["videoid"]."'>Ir al original</a></td><td>".$row["inicio"]. "</td><td>".$row["fin"]. "</td></tr>";
-              }
-            } else {
-              if ($filtro == "vencidos" or $filtro == NULL) {
-                $link_download="https://clipcms.unomedios.com.ar/".$row["link"];
-                echo "<tr><td>".$row["descripcion"]."</td><td><p>Link vencido!!</p></td><td><a href='https://mediacms.unomedios.com.ar/view?m=".$row["videoid"]."'>Ir al original</a></td><td>".$row["inicio"]. "</td><td>".$row["fin"]. "</td></tr>";
-              }
+          if (check_clip_existance($row["link"]) == 1) {
+            if ($filtro == "activos" or $filtro == NULL) {
+              $link_download="https://clipcms.unomedios.com.ar/".$row["link"];
+              echo "<tr><td>".$row["descripcion"]."</td><td><a href='".$link_download. "'>Descargar clip</a></td><td><a href='https://mediacms.unomedios.com.ar/view?m=".$row["videoid"]."'>Ir al original</a></td><td>".$row["inicio"]. "</td><td>".$row["fin"]. "</td></tr>";
+            }
+          } else {
+            if ($filtro == "vencidos" or $filtro == NULL) {
+              $link_download="https://clipcms.unomedios.com.ar/".$row["link"];
+              echo "<tr><td>".$row["descripcion"]."</td><td><p>Link vencido!!</p></td><td><a href='https://mediacms.unomedios.com.ar/view?m=".$row["videoid"]."'>Ir al original</a></td><td>".$row["inicio"]. "</td><td>".$row["fin"]. "</td></tr>";
             }
           }
         }
