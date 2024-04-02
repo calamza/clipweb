@@ -27,8 +27,10 @@ if (isset($users)) {
   if ($users == "todos") {
     echo "<h2>Historico de links creados por todos</h2>";
   }
-  else {
+  else if ($users == NULL) {
     echo "<h2>Historico de links creados por ".$login_session ."</h2>";
+  } else {
+    echo "<h2>Historico de links creados por ".$users ."</h2>";
   }
 ?> 
 <p>
