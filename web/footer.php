@@ -1,7 +1,5 @@
 <html>
-<head>
-<link rel="stylesheet" href="style.css">
-</head>
+
 <body>
 <footer>
 version=1.0.0</br>
