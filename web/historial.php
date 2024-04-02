@@ -34,7 +34,7 @@ if (isset($users)) {
     <?php
     
     if ($users == NULL) {
-      $select = "SELECT usuario,descripcion,link,videoid,inicio,fin FROM links WHERE usuario=$_SESSION['login_user']";
+      //$select = "SELECT usuario,descripcion,link,videoid,inicio,fin FROM links WHERE usuario=$_SESSION['login_user']";
       //$result = mysqli_query($db_link, "SELECT usuario,descripcion,link,videoid,inicio,fin FROM links WHERE usuario=$_SESSION['login_user']");
     } else {
       $select = "SELECT usuario,descripcion,link,videoid,inicio,fin FROM links";
