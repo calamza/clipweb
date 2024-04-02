@@ -19,9 +19,9 @@ $filtro = $_GET['filtro'];
 
 <p>
 </br></br>
-<a href="historial.php?filtro=activos"> Mostrar solo links activos </a></br>
-<a href="historial.php?filtro=vencidos"> Mostrar solo links vencidos </a></br>
 <a href="historial.php"> Mostrar todos </a></br>
+<a href="historial.php?filtro=activos"> Mostrar solo links activos </a></br>
+<a href="historial.php?filtro=vencidos"> Mostrar solo links vencidos </a>
 
 <table style="width:100%">
     <h3><tr><td>Descripcion</td><td>Link</td><td>Link Video Original</td><td>Tiempo de inicio del video original</td><td>Tiempo fin del video original</td></tr></h3>
