@@ -12,7 +12,7 @@ if (isset($users)) {
 } else {
   $users= NULL;
 }
-echo $login_session;
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -43,7 +43,7 @@ echo $login_session;
       //$result = mysqli_query($db_link, "SELECT usuario,descripcion,link,videoid,inicio,fin FROM links");
     }
     
-    $result = mysqli_query($db_link, "SELECT usuario,descripcion,link,videoid,inicio,fin FROM links");
+    $result = mysqli_query($db_link, $select);
     if (mysqli_num_rows($result) > 0) {
         // output data of each row
         while($row = mysqli_fetch_assoc($result)) {
