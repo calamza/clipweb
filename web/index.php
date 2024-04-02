@@ -39,7 +39,7 @@ if ($_SESSION['videoID']==NULL) {
   #echo $_SESSION['videoID'];
   if ($_SESSION['admin_user'] == 1) {
 ?>
-    <p align="right"><a href="historial.php?filtro=todos"> Historial de todos los usuarios </a></p></br>
+    <p align="center"><a href="historial.php?filtro=todos"> Historial de todos los usuarios </a></p></br>
 <?php
 }?>
 <form action="cortar.php" method="post">
