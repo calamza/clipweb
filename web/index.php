@@ -64,6 +64,7 @@ if ($_SESSION['videoID']==NULL) {
 <h3><a href="docu.html">Guia del usuario</a></h3>
 <h3><a href="historial.php">Ver mis links generados</a></h3>
 <h3><a href="logout.php">Cerrar sesion</a></h3>
+<footer>
 <?php
 include('footer.php');
 }
@@ -74,5 +75,6 @@ include('footer.php');
 // destroy the session
 #session_destroy();
 ?>
+</footer>
 </body>
 </html>
