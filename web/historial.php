@@ -24,7 +24,7 @@ if (isset($users)) {
 <body>
 <h2><a href="index.php">Ir al home</a></h2>
 <?php
-  if ($user == "todos") {
+  if ($users == "todos") {
     echo "<h2>Historico de links creados por todos</h2>";
   }
   else {
