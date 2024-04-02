@@ -76,7 +76,10 @@ if ($permanente==0) {
 </table>
 </br></br>
 <h3><a href="historial.php">Ver mis links generados</a></h3>
-<h3><a href="logout.php">Cerrar sesion</a></h3>
+<h3><a href="logout.php">Cerrar sesion</a></h3></br></br>
+<?php
+include('footer.php');
+?> 
 </body>
 </html>
 
