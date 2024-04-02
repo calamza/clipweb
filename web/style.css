@@ -132,6 +132,7 @@ h5{
     font-weight:700;
 }
 footer{
+	display: block;
 	margin:0 0 10px 0;
     font-size:8px;
 	color:#ddc300;
