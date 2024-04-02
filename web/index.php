@@ -66,7 +66,7 @@ if ($_SESSION['videoID']==NULL) {
 <h3><a href="logout.php">Cerrar sesion</a></h3>
 <footer>
 <?php
-include('footer.php');
+include_once('footer.php');
 }
 
 // remove all session variables
