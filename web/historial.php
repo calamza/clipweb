@@ -41,10 +41,10 @@ if (isset($users)) {
 <p>
 </br></br>
 <form action="historial.php" method="post">
-<tr><td>Ingresar nombre de usuario<input type="text" name="usuario" ></td></tr>
-<input type="submit" value="Buscar">
+  <tr><td>Ingresar nombre de usuario<input type="text" name="usuario" ></td></tr>
+<input type="submit" value="Buscar"></br></br>
 </form>
-<a href="historial.php?users=<?php echo $users; ?>"> Mostrar todos </a></br>
+<a href="historial.php?users=<?php echo $users; ?>"> Mostrar links activos y vencidos </a></br>
 <a href="historial.php?filtro=activos&users=<?php echo $users; ?>"> Mostrar solo links activos </a></br>
 <a href="historial.php?filtro=vencidos&users=<?php echo $users; ?>"> Mostrar solo links vencidos </a></br>
 
