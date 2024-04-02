@@ -36,7 +36,7 @@ echo $login_session;
     <?php
     
     if ($users == NULL) {
-      //$select = "SELECT usuario,descripcion,link,videoid,inicio,fin FROM links WHERE usuario=$_SESSION['login_user']";
+      $select = "SELECT usuario,descripcion,link,videoid,inicio,fin FROM links WHERE usuario=$login_session";
       //$result = mysqli_query($db_link, "SELECT usuario,descripcion,link,videoid,inicio,fin FROM links WHERE usuario=$_SESSION['login_user']");
     } else {
       $select = "SELECT usuario,descripcion,link,videoid,inicio,fin FROM links";
