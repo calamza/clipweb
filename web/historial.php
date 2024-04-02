@@ -4,6 +4,7 @@ include('ldap.php');
 include('session.php');
 include('config.php');
 include('functions.php');
+$filtro = $_GET['filtro'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -18,6 +19,8 @@ include('functions.php');
 
 <p>
 </br></br>
+<a href="historial.php?filtro=activos"> Mostrar solo links activos </a>
+<a href="historial.php?filtro=vencidos"> Mostrar solo links vencidos </a>
 <table style="width:100%">
     <h3><tr><td>Descripcion</td><td>Link</td><td>Link Video Original</td><td>Tiempo de inicio del video original</td><td>Tiempo fin del video original</td></tr></h3>
     <?php
