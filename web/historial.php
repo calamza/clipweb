@@ -3,6 +3,7 @@
 include('ldap.php');
 include('session.php');
 include('config.php');
+include('function.php');
 ?>
 <!DOCTYPE html>
 <html>
