@@ -91,4 +91,6 @@ if ($_SESSION['login_user'] == NULL )
     </table>
 </body>
 </html>
-<?php } } ?> 
+<?php } 
+include('footer.php');
+} ?> 

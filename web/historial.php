@@ -85,6 +85,8 @@ if (isset($users)) {
 
 <h3><a href="docu.html">Guia del usuario</a></h3>
 <h3><a href="logout.php">Cerrar sesion</a></h3>
-
+<?php
+include('footer.php');
+?> 
 </body>
 </html>
