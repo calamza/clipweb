@@ -25,7 +25,7 @@ if (isset($users)) {
 <h2><a href="index.php">Ir al home</a></h2>
 <?php
   if ($user = "todos") {
-    echo "<h2>Historico de links creados por ".$login_session ."</h2>";
+    echo "<h2>Historico de links creados por todos</h2>";
   }
   else {
     echo "<h2>Historico de links creados por ".$login_session ."</h2>";
