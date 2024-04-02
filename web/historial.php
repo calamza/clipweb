@@ -34,8 +34,8 @@ if (isset($users)) {
 <p>
 </br></br>
 <a href="historial.php?users=<?php echo $users; ?>"> Mostrar todos </a></br>
-<a href="historial.php?filtro=activos?users=<?php echo $users; ?>"> Mostrar solo links activos </a></br>
-<a href="historial.php?filtro=vencidos?users=<?php echo $users; ?>"> Mostrar solo links vencidos </a></br>
+<a href="historial.php?filtro=activos&users=<?php echo $users; ?>"> Mostrar solo links activos </a></br>
+<a href="historial.php?filtro=vencidos&users=<?php echo $users; ?>"> Mostrar solo links vencidos </a></br>
 
 <table style="width:100%">
     <h3><tr><td>Descripcion</td><td>Link</td><td>Link Video Original</td><td>Tiempo de inicio del video original</td><td>Tiempo fin del video original</td></tr></h3>
