@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 ## Check host referer
 if($_SERVER['HTTP_REFERER'] == "https://mediacms.unomedios.com.ar/") {
   $_SESSION['login_user'] = "MediaCMS";

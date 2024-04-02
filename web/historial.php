@@ -19,9 +19,9 @@ $filtro = $_GET['filtro'];
 
 <p>
 </br></br>
+<a href="historial.php"> Mostrar todos </a></br>
 <a href="historial.php?filtro=activos"> Mostrar solo links activos </a></br>
 <a href="historial.php?filtro=vencidos"> Mostrar solo links vencidos </a></br>
-<a href="historial.php"> Mostrar todos </a></br>
 
 <table style="width:100%">
     <h3><tr><td>Descripcion</td><td>Link</td><td>Link Video Original</td><td>Tiempo de inicio del video original</td><td>Tiempo fin del video original</td></tr></h3>
@@ -43,11 +43,9 @@ $filtro = $_GET['filtro'];
               echo "<tr><td>".$row["descripcion"]."</td><td><p>Link vencido!!</p></td><td><a href='https://mediacms.unomedios.com.ar/view?m=".$row["videoid"]."'>Ir al original</a></td><td>".$row["inicio"]. "</td><td>".$row["fin"]. "</td></tr>";
             }
           }
-          
-          
         }
       } else {
-        echo "0 results";
+        echo "Sin resultados";
       }
     
     ?>
