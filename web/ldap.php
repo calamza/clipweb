@@ -50,16 +50,16 @@ if(isset($_POST['username']) && isset($_POST['password'])){
         echo $msg;
     }
     if ($userok==1) {
-        echo "acceso concedido.";
+        //echo "acceso concedido.";
         $_SESSION['login_user'] = $username;
         if (check_if_admin($username) == 1) {
             $_SESSION['admin_user'] = 1;
-            echo $_SESSION['admin_user'];
+            //echo $_SESSION['admin_user'];
         } else {
             $_SESSION['admin_user'] = 0;
-            echo $_SESSION['admin_user'];
+            //echo $_SESSION['admin_user'];
         }
-        //header("location:index.php");
+        header("location:index.php");
     } else {
         echo "el usuario no tiene permiso para ingresar, debe solicitar permiso al sector de soporte para habilitar el acceso.";
     }
