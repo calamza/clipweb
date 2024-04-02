@@ -6,6 +6,11 @@ include('config.php');
 include('functions.php');
 $filtro = $_GET['filtro'];
 $users = $_GET['users'];
+if (isset($users)) {
+  echo "tiene algo";
+} else {
+  $users= NULL;
+}
 ?>
 <!DOCTYPE html>
 <html>
