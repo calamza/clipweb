@@ -49,7 +49,7 @@ if ($_SESSION['videoID']==NULL) {
     <tr><td>Descripcion<input type="text" id="name" name="descripcion" required minlength="4" maxlength="50" size="80" /></td></tr>
     <tr><td>Clip en linea por 6 meses<input type="checkbox" name="permanente" value="checkox_value"></td></tr>
   </table>
-  <bold><p style="color:#FF0000">AVISO: Si no se selecciona el tilde "Clip en linea por 6 meses, el clip solo va a estar disponible en linea por 30 dias"<p></bold>
+  <bold><p style="color:#FF0000">AVISO: Si no se selecciona el tilde "Clip en linea por 6 meses", el clip solo va a estar disponible en linea por 30 dias<p></bold>
   <bold><p style="color:#FF0000">IMPORTANTE: Cuando le de al boton cortar se va a procesar el clip por lo que va a demorar. NO PRESIONE VARIAS VECES EL BOTON CORTAR!!<p></bold>
   <input type="submit" value="Cortar">
   </fieldset>
