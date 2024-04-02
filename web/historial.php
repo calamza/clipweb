@@ -21,9 +21,11 @@ $filtro = $_GET['filtro'];
 </br></br>
 <a href="historial.php?filtro=activos"> Mostrar solo links activos </a>
 <a href="historial.php?filtro=vencidos"> Mostrar solo links vencidos </a>
+
 <table style="width:100%">
     <h3><tr><td>Descripcion</td><td>Link</td><td>Link Video Original</td><td>Tiempo de inicio del video original</td><td>Tiempo fin del video original</td></tr></h3>
     <?php
+    if ($filtro==NULL) {
     $result = mysqli_query($db_link, "SELECT usuario,descripcion,link,videoid,inicio,fin FROM links");
     if (mysqli_num_rows($result) > 0) {
         // output data of each row
@@ -43,6 +45,7 @@ $filtro = $_GET['filtro'];
       } else {
         echo "0 results";
       }
+    }
     ?>
     
 </table>
