@@ -89,8 +89,8 @@ if ($_SESSION['login_user'] == NULL )
     </p>
     </form>
     </table>
+    </br></br>
+    <?php include('footer.php'); ?> 
 </body>
 </html>
-<?php } 
-include('footer.php');
-} ?> 
+<?php } } ?> 
