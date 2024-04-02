@@ -43,11 +43,9 @@ $filtro = $_GET['filtro'];
               echo "<tr><td>".$row["descripcion"]."</td><td><p>Link vencido!!</p></td><td><a href='https://mediacms.unomedios.com.ar/view?m=".$row["videoid"]."'>Ir al original</a></td><td>".$row["inicio"]. "</td><td>".$row["fin"]. "</td></tr>";
             }
           }
-          
-          
         }
       } else {
-        echo "0 results";
+        echo "Sin resultados";
       }
     
     ?>
