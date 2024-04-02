@@ -64,9 +64,9 @@ function check_clip_existance($url){
 
 function check_if_admin($username) {
     include('config.php');
-    $result = mysqli_query($db_link, "SELECT username FROM admin");
-    if (mysqli_num_rows($result) > 0) {
-        while($row = mysqli_fetch_assoc($result)) {
+    $result_select = mysqli_query($db_link, "SELECT username FROM admin");
+    if (mysqli_num_rows($result_select) > 0) {
+        while($row = mysqli_fetch_assoc($result_select)) {
             if ($row["username"] == $username) {
                 return 1;
             } else {
