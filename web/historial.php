@@ -34,12 +34,12 @@ if (isset($users)) {
 <table style="width:100%">
     <h3><tr><td>Descripcion</td><td>Link</td><td>Link Video Original</td><td>Tiempo de inicio del video original</td><td>Tiempo fin del video original</td></tr></h3>
     <?php
-    echo $login_session;
+    //echo $login_session;
     if ($users == "todos") {
       $select = "SELECT usuario,descripcion,link,videoid,inicio,fin FROM links";
       //$result = mysqli_query($db_link, "SELECT usuario,descripcion,link,videoid,inicio,fin FROM links WHERE usuario=$_SESSION['login_user']");
     } else {
-      $select = "SELECT usuario,descripcion,link,videoid,inicio,fin FROM links WHERE usuario=$login_session";
+      $select = "SELECT usuario,descripcion,link,videoid,inicio,fin FROM links WHERE usuario = '$login_session'";
       //$result = mysqli_query($db_link, "SELECT usuario,descripcion,link,videoid,inicio,fin FROM links");
     }
     //$result = mysqli_query($db_link, "SELECT usuario,descripcion,link,videoid,inicio,fin FROM links");
