@@ -44,23 +44,21 @@ function check_clip_existance($url){
     // Creating a variable with an URL 
     // to be checked
 
-    $url = "https://clipcms.unomedios.com.ar/".substr($url,17);
+    //$url = "https://clipcms.unomedios.com.ar/".substr($url,17);
     echo $url;
     // Getting page header data 
-    //$array = @get_headers($url); 
+    $array = @get_headers($url); 
 
     // Storing value at 1st position because 
     // that is only what we need to check 
-    //$string = $array[0]; 
+    $string = $array[0]; 
 
     // 404 for error, 200 for no error 
-    /*
     if(strpos($string, "200")) { 
         return 1; 
     } else { 
         return 0; 
     } 
-    */
 
 }
 
