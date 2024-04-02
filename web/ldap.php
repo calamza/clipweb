@@ -1,8 +1,6 @@
 <?php
-/**
- * Created by Joe of ExchangeCore.com
- */
-//include('functions.php');
+
+include('config.php');
 session_start();
 if(isset($_POST['username']) && isset($_POST['password'])){
 
@@ -52,6 +50,19 @@ if(isset($_POST['username']) && isset($_POST['password'])){
     if ($userok==1) {
         //echo "acceso concedido.";
         $_SESSION['login_user'] = $username;
+        # Chequeamos si es admin
+        $result_select = mysqli_query($db_link, "SELECT username FROM admin");
+        if (mysqli_num_rows($result_select) > 0) {
+            while($row = mysqli_fetch_assoc($result_select)) {
+                if ($row["username"] == $username) {
+                    $_SESSION['admin_user'] = 1;
+                } else {
+                    $_SESSION['admin_user'] = 0;
+                }
+            }
+        }
+
+
         /*
         if (check_if_admin($username) == 1) {
             $_SESSION['admin_user'] = 1;
