@@ -24,6 +24,11 @@ include('config.php');
     if (mysqli_num_rows($result) > 0) {
         // output data of each row
         while($row = mysqli_fetch_assoc($result)) {
+          if (check_clip_existance($row["link"])) {
+              echo "existe todavia";
+          } else {
+            echo "link vencido";
+          }
           $link_download="https://clipcms.unomedios.com.ar/".$row["link"];
           echo "<tr><td>".$row["descripcion"]."</td><td><a href='".$link_download. "'>Descargar clip</a></td><td><a href='https://mediacms.unomedios.com.ar/view?m=".$row["videoid"]."'>Ir al original</a></td><td>".$row["inicio"]. "</td><td>".$row["fin"]. "</td></tr>";
         }

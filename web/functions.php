@@ -42,9 +42,10 @@ function check_videoid_existance($videoid){
 function check_clip_existance($url){
     
     // Creating a variable with an URL 
-    // to be checked 
-    //$url = $url; 
+    // to be checked
 
+    $url = "https://clipcms.unomedios.com.ar/".substr($url,17);; 
+    echo $url;
     // Getting page header data 
     $array = @get_headers($url); 
 
