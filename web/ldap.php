@@ -55,16 +55,12 @@ if(isset($_POST['username']) && isset($_POST['password'])){
         if (mysqli_num_rows($result_select) > 0) {
             while($row = mysqli_fetch_assoc($result_select)) {
                 if ($row["username"] == $username) {
-                    echo "es admin\n";
-                    echo $username;
                     $_SESSION['admin_user'] = 1;
                 } else {
-                    echo "no es admin\n";
                     $_SESSION['admin_user'] = 0;
                 }
             }
         }
-
 
         /*
         if (check_if_admin($username) == 1) {
@@ -75,7 +71,7 @@ if(isset($_POST['username']) && isset($_POST['password'])){
             //echo $_SESSION['admin_user'];
         }
         */
-        //header("location:index.php");
+        header("location:index.php");
     } else {
         echo "el usuario no tiene permiso para ingresar, debe solicitar permiso al sector de soporte para habilitar el acceso.";
     }
