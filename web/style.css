@@ -139,6 +139,7 @@ footer{
 	font-weight:700;
 	border:1px solid #aaa;
 	position:right;
+	text-align: right;
 }
 blockquote{
 	background:#eee;
