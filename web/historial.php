@@ -33,7 +33,8 @@ if (isset($users)) {
     echo "<h2>Historico de links creados por todos</h2>";
   }
   else if ($users == NULL) {
-    echo "<h2>Historico de links creados por ".$login_session ."</h2>";
+    $display = isset($login_name) ? $login_name : $login_session;
+    echo "<h2>Historico de links creados por ".$display ."</h2>";
   } else {
     echo "<h2>Historico de links creados por ".$users ."</h2>";
   }

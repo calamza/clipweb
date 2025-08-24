@@ -1,6 +1,6 @@
 <?php
 // Minimal version exposure for IngestaCMS
-$version = '1.0.2';
+$version = '1.1.0';
 if (file_exists(__DIR__ . '/config.php')) {
   // Optionally parse a VERSION file or env in the future
 }

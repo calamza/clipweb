@@ -35,7 +35,7 @@ if (isset($_SESSION['videoID'])) {
   <div class="container">
     <div class="card">
   <img src="images/logo.png" alt="ClipWEB" style="height:42px;display:block;margin:0 auto 8px;opacity:.9">
-      <h1 style="text-align:center;">Bienvenido <?php echo htmlspecialchars($login_session); ?></h1>
+  <h1 style="text-align:center;">Bienvenido <?php echo htmlspecialchars(isset($login_name) ? $login_name : $login_session); ?></h1>
       <p class="muted" style="text-align:center;margin:0 0 12px;">Generá y compartí clips fácilmente</p>
 <?php
 if ($_SESSION['videoID']==NULL) {

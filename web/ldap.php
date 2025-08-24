@@ -20,7 +20,8 @@ if(isset($_POST['username']) && isset($_POST['password'])){
 
     if ($bind) {
         $filter="(sAMAccountName=$username)";
-        $result = ldap_search($ldap,"dc=unomedios,dc=com,dc=ar",$filter,array("memberof"));
+        // Request additional attributes to get the full display name
+        $result = ldap_search($ldap,"dc=unomedios,dc=com,dc=ar",$filter,array("memberof","displayName","cn","givenName","sn","mail"));
         //ldap_sort($ldap,$result,"sn");
         $info = ldap_get_entries($ldap, $result);
         //echo "Existe el usuario";
@@ -34,6 +35,24 @@ if(isset($_POST['username']) && isset($_POST['password'])){
                         $userok = 1; break;
                     }
                 }
+            }
+            // Build a friendly full name from LDAP, prefer displayName then cn, else givenName + sn, else a prettified username
+            $fullName = null;
+            if (isset($info[0]['displayname'][0]) && trim($info[0]['displayname'][0]) !== '') {
+                $fullName = $info[0]['displayname'][0];
+            } elseif (isset($info[0]['cn'][0]) && trim($info[0]['cn'][0]) !== '') {
+                $fullName = $info[0]['cn'][0];
+            } elseif ((isset($info[0]['givenname'][0]) && isset($info[0]['sn'][0]))) {
+                $fullName = trim($info[0]['givenname'][0] . ' ' . $info[0]['sn'][0]);
+            }
+            if (!$fullName || trim($fullName) === '') {
+                $pretty = str_replace('.', ' ', $username);
+                $fullName = ucwords($pretty);
+            }
+            // Save for later use
+            $_SESSION['login_name'] = $fullName;
+            if (isset($info[0]['mail'][0]) && trim($info[0]['mail'][0]) !== '') {
+                $_SESSION['login_mail'] = $info[0]['mail'][0];
             }
         }
         
