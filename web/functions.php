@@ -1,18 +1,17 @@
 <?php
 
-function save_history($texto) {
+function save_history($sqlInsertOrText) {
     include('config.php');
-    //echo "<strong>El texto a mostrar es el siguiente: </strong>";
-    //echo $texto;
-    //$result = mysqli_query($db_link, "SELECT * FROM links");
-    
-    if (mysqli_query($db_link, $texto)) {
-        echo "<h3>Link guardado en mi historial</h3>\n\n\n";  
-    }else{  
-        echo "Could not insert record: ". mysqli_error($db_link);  
+    // Only allow INSERT statements for safety
+    if (stripos(trim($sqlInsertOrText), 'insert') !== 0) {
+        return false;
     }
-        mysqli_close($db_link);
-
+    $ok = mysqli_query($db_link, $sqlInsertOrText) === true;
+    if (!$ok) {
+        error_log('save_history error: ' . mysqli_error($db_link));
+    }
+    mysqli_close($db_link);
+    return $ok;
 }
 
 function check_videoid_existance($videoid){
@@ -64,16 +63,16 @@ function check_clip_existance($url){
 
 function check_if_admin($username) {
     include('config.php');
-    $result_select = mysqli_query($db_link, "SELECT username FROM admin");
-    if (mysqli_num_rows($result_select) > 0) {
+    $isAdmin = 0;
+    if ($result_select = mysqli_query($db_link, "SELECT username FROM admin")) {
         while($row = mysqli_fetch_assoc($result_select)) {
-            if ($row["username"] == $username) {
-                return 1;
-            } else {
-                return 0;
+            if (isset($row["username"]) && strcasecmp($row["username"], $username) === 0) {
+                $isAdmin = 1; break;
             }
         }
+        mysqli_free_result($result_select);
     }
+    return $isAdmin;
 
 }
 

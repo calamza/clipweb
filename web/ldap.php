@@ -16,6 +16,7 @@ if(isset($_POST['username']) && isset($_POST['password'])){
     ldap_set_option($ldap, LDAP_OPT_REFERRALS, 0);
 
     $bind = @ldap_bind($ldap, $ldaprdn, $password);
+    $userok = 0;
 
     if ($bind) {
         $filter="(sAMAccountName=$username)";
@@ -24,28 +25,22 @@ if(isset($_POST['username']) && isset($_POST['password'])){
         $info = ldap_get_entries($ldap, $result);
         //echo "Existe el usuario";
         
-        for ($i=0; $i<$info["count"]; $i++)
-        {
-            if($info['count'] > 1)
-                break;
-            //echo "<p>You are accessing <strong> ". $info[$i]["memberof"][1] .", " . $info[$i]["givenname"][0] ."</strong><br /> (" . $info[$i]["samaccountname"][0] .")</p>\n";
-            $groups_count=count($info[$i],1);
-            //echo $groups_count;
-            
-            for ($j=0; $j<$groups_count; $j++)
-            {
-                //echo "<p>dentro del segundo for</p>\n".$j;
-                //echo $info[$i]["memberof"][$j];
-                if ($info[$i]["memberof"][$j] == "CN=G_ClipWeb,OU=Grupos_Medios,OU=Medios,DC=unomedios,DC=com,DC=ar") {
-                    $userok=1;
+        if ($info && $info['count'] > 0) {
+            // memberOf is multi-valued; iterate safely
+            $memberOf = isset($info[0]['memberof']) ? $info[0]['memberof'] : [];
+            if (isset($memberOf['count'])) {
+                for ($j=0; $j < $memberOf['count']; $j++) {
+                    if (isset($memberOf[$j]) && $memberOf[$j] === "CN=G_ClipWeb,OU=Grupos_Medios,OU=Medios,DC=unomedios,DC=com,DC=ar") {
+                        $userok = 1; break;
+                    }
                 }
             }
         }
         
         @ldap_close($ldap);
     } else {
-        $msg = "Usuario y/o clave incorrecto";
-        echo $msg;
+    $msg = "Usuario y/o clave incorrecto";
+    echo $msg;
     }
     if ($userok==1) {
         //echo "acceso concedido.";
@@ -94,4 +89,6 @@ if ($_SESSION['login_user'] == NULL )
     </div>
 </body>
 </html>
+<script src="version.php"></script>
+<script src="footer.js"></script>
 <?php } } ?> 

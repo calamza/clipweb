@@ -88,5 +88,7 @@ if (isset($users)) {
 <?php
 include('footer.php');
 ?> 
+<script src="version.php"></script>
+<script src="footer.js"></script>
 </body>
 </html>

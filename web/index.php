@@ -79,5 +79,7 @@ include_once('footer.php');
     </div>
   </div>
   </div>
+<script src="version.php"></script>
+<script src="footer.js"></script>
 </body>
 </html>

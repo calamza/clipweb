@@ -80,6 +80,8 @@ if ($permanente==0) {
 <?php
 include('footer.php');
 ?> 
+<script src="version.php"></script>
+<script src="footer.js"></script>
 </body>
 </html>
 
