@@ -72,7 +72,7 @@ if ($_SESSION['login_user'] == NULL )
 </head>
 <body class="layout-center">
     <div class="card" style="width:480px;max-width:90vw">
-        <img src="images/videoid.png" alt="ClipWEB" style="height:42px;display:block;margin:0 auto 8px;opacity:.9">
+        <img src="images/logo.png" alt="ClipWEB" style="height:42px;display:block;margin:0 auto 8px;opacity:.9">
         <h1 style="text-align:center">Iniciar sesión</h1>
         <p class="muted" style="text-align:center">Usá tu usuario corporativo (apellido.nombre)</p>
         <form action="#" method="POST">
