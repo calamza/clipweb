@@ -31,39 +31,41 @@ if (isset($_SESSION['videoID'])) {
 <title>ClipWEB - Cortar videos para compartir</title>
 
 </head>
-<body>
-<h1>Bienvenido <?php echo $login_session; ?></h1>
-<p>
+<body class="" style="background:#f3f6fb;">
+  <div class="container">
+    <div class="card">
+      <img src="images/videoid.png" alt="ClipWEB" style="height:42px;display:block;margin:0 auto 8px;opacity:.9">
+      <h1 style="text-align:center;">Bienvenido <?php echo htmlspecialchars($login_session); ?></h1>
+      <p class="muted" style="text-align:center;margin:0 0 12px;">Generá y compartí clips fácilmente</p>
 <?php
 if ($_SESSION['videoID']==NULL) {
   #echo $_SESSION['videoID'];
   if ($_SESSION['admin_user'] == 1) {
 ?>
-    <p align="center"><a href="historial.php?users=todos"> Historial de todos los usuarios </a> (vista solo para admins)</p></br>
+    <p style="text-align:center" class="alert alert-info"><a href="historial.php?users=todos">Historial de todos los usuarios</a> (solo admins)</p>
 <?php
 }?>
-<form action="cortar.php" method="post">
-<fieldset>
-<!-- Form Name -->
-<h3>Identificar video</h3>
-<!-- Text input-->
-
-  <table style="width:50%">
-    <tr><td>VideoID<input type="text" name="videoid" pattern="[a-zA-Z0-9]{9}"> ID del video de mediacms, es lo que figura en la url despues del signo =</td></tr>
-    <tr><td>Inicio<input type="text" name="inicio" placeholder="00:00:00" > en formato hora 01:02:03, hora, minuto y segundo en el que debe empezar respecto al original</td></tr>
-    <tr><td>Fin<input type="text" name="fin" placeholder="00:00:00"> en formato hora 01:02:03, hora, minuto y segundo en el que debe finalizar respecto al original</td></tr>
-    <tr><td>Descripcion<input type="text" id="name" name="descripcion" required minlength="4" maxlength="50" size="80" /></td></tr>
-    <tr><td>Clip en linea por 6 meses<input type="checkbox" name="permanente" value="checkox_value"></td></tr>
-  </table>
-  <bold><p style="color:#FF0000">AVISO: Si no se selecciona el tilde "Clip en linea por 6 meses", el clip solo va a estar disponible en linea por 30 dias<p></bold>
-  <bold><p style="color:#FF0000">IMPORTANTE: Cuando le de al boton cortar se va a procesar el clip por lo que va a demorar. NO PRESIONE VARIAS VECES EL BOTON CORTAR!!<p></bold>
-  <input type="submit" value="Cortar">
-  </fieldset>
+<form action="cortar.php" method="post" class="" style="max-width:720px;margin:16px auto;">
+  <h2>Identificar video</h2>
+  <label>VideoID</label>
+  <input type="text" name="videoid" pattern="[a-zA-Z0-9]{9}" placeholder="Ej: ABCDE1234" required>
+  <small class="muted">ID del video en MediaCMS (lo que figura en la URL después de =)</small>
+  <label>Inicio</label>
+  <input type="text" name="inicio" placeholder="00:00:00">
+  <label>Fin</label>
+  <input type="text" name="fin" placeholder="00:00:00">
+  <label>Descripción</label>
+  <input type="text" id="name" name="descripcion" required minlength="4" maxlength="50">
+  <label style="display:flex;align-items:center;gap:8px"><input type="checkbox" name="permanente" value="checkox_value"> Clip en línea por 6 meses</label>
+  <div class="alert alert-warn"><strong>Aviso:</strong> si no tildás “Clip en línea por 6 meses”, el clip queda 30 días.</div>
+  <div class="alert alert-err"><strong>Importante:</strong> al presionar “Cortar” comienza el procesamiento; no hagas clic varias veces.</div>
+  <input type="submit" value="Cortar" class="btn">
 </form>
 </br></br>
-<h3><a href="docu.html">Guia del usuario</a></h3>
-<h3><a href="historial.php">Ver mis links generados</a></h3>
-<h3><a href="logout.php">Cerrar sesion</a></h3>
+<div style="text-align:center">
+  <p><a href="docu.html">Guía del usuario</a> · <a href="historial.php">Ver mis links</a> · <a href="logout.php">Cerrar sesión</a></p>
+  <p class="muted">Soporte: <a href="mailto:soporte@grupoamerica.com.ar">soporte@grupoamerica.com.ar</a></p>
+</div>
 <?php
 include_once('footer.php');
 }
@@ -74,5 +76,8 @@ include_once('footer.php');
 // destroy the session
 #session_destroy();
 ?>
+    </div>
+  </div>
+  </div>
 </body>
 </html>

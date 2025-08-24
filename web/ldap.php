@@ -73,24 +73,25 @@ if ($_SESSION['login_user'] == NULL )
 <html>
 <head>
 <link rel="stylesheet" href="style.css">
-<title>ClipWEB - Iniciar sesion</title>
+<title>ClipWEB - Iniciar sesión</title>
 </head>
-<body>
-<p><h2>Iniciar sesion con su usuario de la compu (apellido.nombre)</h2></p></br>
-<p><h3>IMPORTANTE: Si no has ingresado nunca y tu usuario no esta habilitado contacta con el equipo de soporte para poder acceder.</h3></p>
-</br></br>
-    <table style="width:100%">
-    
-    <form action="#" method="POST">
-    <p>
-    <tr><td><label for="username">Nombre de usuario: </label><input id="username" type="text" name="username" /></td></tr>
-    <tr><td><label for="password">Clave: </label><input id="password" type="password" name="password" /> </td></tr>
-    <tr><td><input type="submit" name="submit" value="Iniciar sesion" /></td></tr>
-    </p>
-    </form>
-    </table>
-    </br></br>
-    <?php include('footer.php'); ?> 
+<body class="layout-center">
+    <div class="card" style="width:480px;max-width:90vw">
+        <img src="images/videoid.png" alt="ClipWEB" style="height:42px;display:block;margin:0 auto 8px;opacity:.9">
+        <h1 style="text-align:center">Iniciar sesión</h1>
+        <p class="muted" style="text-align:center">Usá tu usuario corporativo (apellido.nombre)</p>
+        <form action="#" method="POST">
+            <label for="username">Nombre de usuario</label>
+            <input id="username" type="text" name="username" required />
+            <label for="password">Clave</label>
+            <input id="password" type="password" name="password" required />
+            <input type="submit" name="submit" value="Iniciar sesión" class="btn" />
+        </form>
+        <div class="alert alert-info">Si no estás habilitado, contactá a <a href="mailto:soporte@grupoamerica.com.ar">soporte</a>.</div>
+        <footer>
+            <div class="muted">ClipWEB · Grupo América</div>
+        </footer>
+    </div>
 </body>
 </html>
 <?php } } ?> 
